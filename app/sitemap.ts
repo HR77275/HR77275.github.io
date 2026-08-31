@@ -1,0 +1,19 @@
+import type { MetadataRoute } from 'next';
+import { profile } from '@/data/profile';
+import { projects } from '@/data/projects';
+import { notes } from '@/content/notes';
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    '/',
+    '/projects',
+    '/experience',
+    '/research',
+    '/about',
+    '/notes',
+    '/resume',
+    ...projects.map((p) => `/projects/${p.slug}`),
+    ...notes
+      .filter((n) => n.status === 'published')
+      .map((n) => `/notes/${n.slug}`),
+  ].map((path) => ({ url: new URL(path, profile.siteUrl).toString() }));
+}
