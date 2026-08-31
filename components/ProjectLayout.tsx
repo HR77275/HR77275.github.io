@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { Project } from '@/data/projects';
-import { ProjectDiagram } from './ProjectDiagram';
+import { ArchitectureExplorer } from './ArchitectureExplorer';
+import { ProjectNavigation } from './ProjectNavigation';
+import { MediaGallery } from './MediaGallery';
 import { MediaBlock } from './MediaBlock';
 import { ArrowRight, ArrowUpRight } from './Icons';
 const sections = [
@@ -61,21 +63,14 @@ export function ProjectLayout({
       {project.cover ? (
         <MediaBlock media={project.cover} />
       ) : (
-        <ProjectDiagram project={project} large />
+        <ArchitectureExplorer project={project} />
       )}
       <div className="project-content">
-        <nav className="project-toc" aria-label="On this project page">
-          <p className="eyebrow">IN THIS PROJECT</p>
-          {sections
-            .filter(
-              ([id]) => id !== 'technical' || project.technicalDetails?.length,
-            )
-            .map(([id, label]) => (
-              <a href={`#${id}`} key={id}>
-                {label}
-              </a>
-            ))}
-        </nav>
+        <ProjectNavigation
+          sections={sections.filter(
+            ([id]) => id !== 'technical' || project.technicalDetails?.length,
+          )}
+        />
         <article className="project-article">
           <section id="overview">
             <h2>Overview</h2>
@@ -135,9 +130,7 @@ export function ProjectLayout({
           </section>
           <section id="demo">
             <h2>Demo</h2>
-            {project.demo.map((media, index) => (
-              <MediaBlock key={index} media={media} />
-            ))}
+            <MediaGallery key={project.slug} media={project.demo} />
           </section>
           {project.technicalDetails?.length ? (
             <section id="technical">

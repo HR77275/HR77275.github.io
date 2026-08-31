@@ -1,3 +1,4 @@
+import { ReadingTools } from '@/components/ReadingTools';
 import type { Metadata } from 'next';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -43,6 +44,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <Navbar />
+        <ReadingTools />
         <main id="main">{children}</main>
         <Footer />
       </body>

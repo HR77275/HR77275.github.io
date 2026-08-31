@@ -63,3 +63,28 @@ console.log(
     publications.length +
     ' publications.',
 );
+
+import { filterProjects } from '../lib/project-search.ts';
+assert.equal(filterProjects(projects, 'All work', '').length, projects.length);
+assert.deepEqual(
+  filterProjects(projects, 'Robotics', '  SMOLVLA  ').map((p) => p.slug),
+  ['smolvla'],
+);
+assert.deepEqual(
+  filterProjects(projects, 'Perception', 'BiFPN').map((p) => p.slug),
+  ['adas-trifocal', 'pole-detection'],
+);
+assert.equal(filterProjects(projects, 'Robotics', 'BiFPN').length, 0);
+assert.deepEqual(
+  filterProjects(projects, 'All work', 'synthetic controlnet').map(
+    (p) => p.slug,
+  ),
+  ['synthetic-rare-cases'],
+);
+assert.equal(
+  filterProjects(projects, 'All work', 'nonexistenttopic').length,
+  0,
+);
+console.log(
+  'Project search checks passed: case folding, technology search, multi-term matching, combined filters, and empty results.',
+);

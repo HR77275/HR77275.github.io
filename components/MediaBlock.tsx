@@ -1,16 +1,14 @@
 import Image from 'next/image';
 import type { Media } from '@/data/projects';
 import { MediaComparison } from './MediaComparison';
+import { ProjectVideo } from './ProjectVideo';
 export function MediaBlock({ media }: { media: Media }) {
   if (media.type === 'placeholder')
     return (
       <figure className="media-placeholder">
         <div className="placeholder-frame">
-          <span className="play-outline" aria-hidden="true">
-            ▷
-          </span>
           <h3>{media.label}</h3>
-          <p>Demo to be added</p>
+          <p>Project media to be added</p>
         </div>
         {media.caption && <figcaption>{media.caption}</figcaption>}
       </figure>
@@ -19,27 +17,7 @@ export function MediaBlock({ media }: { media: Media }) {
   if (media.type === 'video')
     return (
       <figure className="media-block">
-        <video
-          controls
-          muted={media.autoplay}
-          autoPlay={media.autoplay}
-          loop={media.autoplay}
-          playsInline
-          preload="none"
-          poster={media.poster}
-          aria-label={media.alt}
-        >
-          <source src={media.src} />
-          <track
-            kind="captions"
-            src={media.captions}
-            srcLang="en"
-            label="English"
-            default
-          />
-          Your browser does not support video.{' '}
-          <a href={media.src}>Download the demonstration.</a>
-        </video>
+        <ProjectVideo media={media} />
         {media.caption && <figcaption>{media.caption}</figcaption>}
       </figure>
     );

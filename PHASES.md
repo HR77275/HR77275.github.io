@@ -37,3 +37,12 @@ Run bash scripts/run.sh dev from portfolio/ in WSL.
 The app and installed dependencies can run offline. Codex itself still needs its service connection.
 Use the existing .openai/hosting.json project_id if completing private Sites hosting; never create a second Site.
 Do not publish invented metrics or confidential employer data.
+
+## Interactive enhancement — implemented
+
+- Added a research-focus explorer, searchable project layouts, quick previews, clickable architecture, and an experience selector.
+- Added stronger motion with reduced-motion and touch safeguards, reading progress, active project navigation, and back-to-top controls.
+- Added media gallery navigation and enlarged previews for future assets; no placeholder videos simulate playback.
+- Existing social card, content, personal links, and hosting project preserved.
+- Next.js and Sites production builds, TypeScript, lint, project-search checks, 17 route responses, 3 missing-route cases, and representative metadata checks passed.
+- The enhanced version uses the same private site URL; deployment confirmation is recorded in the task thread.

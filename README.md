@@ -156,3 +156,16 @@ https://himanshu-ranjan-ml-robotics.himanshu772002.chatgpt.site
 This preview uses owner-only access; it is not the public Vercel deployment. The hosted SITE_URL environment value supplies its trusted origin. Set NEXT_PUBLIC_SITE_URL for your eventual Vercel domain.
 
 The optional Cloudflare local emulator does not start on this Ubuntu 20.04 installation because its workerd binary requires a newer glibc. This does not affect Next.js development, production builds, or Vercel deployment. Both build targets compile; only the optional local Worker emulation is unavailable.
+
+## Interactive portfolio update
+
+- The hero contains selectable research areas and clickable perception-to-action stages. Edit their copy in data/explorations.ts.
+- Selected homepage projects and the complete project index support case-insensitive, multi-term search across titles, topics, and technologies; category filters; grid/list views; and accessible quick-look dialogs.
+- Homepage experience switches between organizations. Project pages include clickable architecture stages and an active section index.
+- Motion includes staggered hero entrances, animated focus transitions, scroll reveals, pointer-sensitive card depth, hover-only processing accents, and a reading-progress line. Reduced-motion preferences disable ornamental motion. Touch devices do not use card tilt.
+- Add actual image/video/GIF/comparison entries to a project's demo array in data/projects.ts. MediaGallery supplies previous/next navigation, media selection, and an expanded view for images, diagrams, GIFs, and comparisons. Videos retain their native fullscreen controls.
+- Until real media is supplied, gallery panels explain what will be added; they never pretend to play a video or display measured results.
+- Opt-in autoplay only runs muted, while visible, and when reduced motion is not requested. Manual playback remains available.
+- No new runtime packages were installed for these features. Accessible dialogs reuse the existing Base UI dependency.
+
+Run npm run check:content for data integrity and project-search checks. Browser interaction and visual testing have not been performed in this environment.
