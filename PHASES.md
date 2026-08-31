@@ -17,7 +17,7 @@
 - Missing metrics, dates, social URLs, PDF, and real demo footage explicitly remain placeholders.
 - Generated branded social preview stored locally.
 
-## Phase 3 — Validation / deployment
+## Phase 3 — Complete
 
 - Next.js production build passed.
 - TypeScript passed; lint passed with zero warnings/errors.
@@ -26,7 +26,8 @@
 - Optional Sites build passed.
 - Production checks passed: 17 routes, 3 missing-route cases, 3 metadata pages, internal links, and placeholder-link safety.
 - Browser automation unavailable due to a runtime startup error; no visual browser or Lighthouse results claimed.
-- Private deployment is being prepared; Vercel deployment remains available independently.
+- Private version 1 deployed successfully: https://himanshu-ranjan-ml-robotics.himanshu772002.chatgpt.site
+- Final delivery checkpoint adds the confirmed deployment origin. Vercel is ready to deploy independently.
 - Vercel deployment instructions are in README.md.
 
 ## Resume after interruption

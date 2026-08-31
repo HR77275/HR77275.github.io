@@ -148,3 +148,11 @@ No Cloudflare configuration is needed for Vercel. The optional build:sites scrip
 TypeScript, lint, production compilation, route responses, metadata, and local content checks are used to validate the foundation. Browser visual testing and Lighthouse scoring have not been performed; no numerical performance claim is made.
 
 See PHASES.md for the latest completed checks and remaining deployment steps.
+
+## Private hosted preview
+
+https://himanshu-ranjan-ml-robotics.himanshu772002.chatgpt.site
+
+This preview uses owner-only access; it is not the public Vercel deployment. The hosted SITE_URL environment value supplies its trusted origin. Set NEXT_PUBLIC_SITE_URL for your eventual Vercel domain.
+
+The optional Cloudflare local emulator does not start on this Ubuntu 20.04 installation because its workerd binary requires a newer glibc. This does not affect Next.js development, production builds, or Vercel deployment. Both build targets compile; only the optional local Worker emulation is unavailable.
