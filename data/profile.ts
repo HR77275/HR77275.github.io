@@ -1,38 +1,44 @@
 export const profile = {
   name: 'Himanshu Ranjan',
-  role: 'Machine Learning & Robotics Engineer',
-  focus: 'Embodied AI · Computer Vision · Autonomous Systems',
+  role: 'Robotics & Machine Learning Engineer',
+  focus: 'Embodied AI · World Models · Autonomous Systems',
   intro:
-    'I work on perception, robot learning, vision-language-action models, diffusion policies, and the systems that bring intelligent behavior into the physical world.',
-  location: 'Location to be added',
-  email: 'hello@example.com',
+    'I build learning systems for robots, from multimodal data pipelines and world models to vision-language-action policies and safety-aware autonomy.',
+  location: 'Amherst, MA',
+  email: 'himanshuranj@umass.edu',
   links: {
-    github: 'https://github.com/YOUR_USERNAME',
-    linkedin: 'https://www.linkedin.com/in/YOUR_USERNAME',
+    github: 'https://github.com/HR77275',
+    linkedin: 'https://www.linkedin.com/in/himanshuranjan77/',
     huggingface: 'https://huggingface.co/YOUR_USERNAME',
     resume: '/resume.pdf',
   },
-  // Set to true after adding public/resume.pdf.
-  resumeAvailable: false,
-  // Set your final production origin before deploying.
+  resumeAvailable: true,
   siteUrl:
     process.env.SITE_URL ||
     process.env.NEXT_PUBLIC_SITE_URL ||
-    'https://example.com',
-  bio: 'My work sits at the intersection of machine learning and physical systems: building perception pipelines, learning from robot demonstrations, and evaluating how policies behave on real hardware.',
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL
+      : 'https://example.com'),
+  bio: 'My work connects robot learning with reliable real-world systems: collecting multimodal data, training manipulation and navigation policies, building simulation workflows, and deploying perception and inference pipelines.',
   currentFocus:
-    'Vision-language-action models, diffusion policies, and real robot learning for manipulation and navigation.',
+    'World-model post-training, digital twins, multimodal navigation, and vision-language-action policies for real robots.',
   background:
-    'From ADAS perception at Bosch to embodied AI research at UMass Amherst, I focus on connecting model development with the constraints of deployed systems.',
+    'I am an MS Computer Science student at UMass Amherst with research experience in embodied AI and human-centered robotics, following three years building production ADAS perception systems at Bosch.',
   interests: [
-    'Generalist robot policies',
-    'Learning from demonstrations',
-    'Multimodal perception',
+    'World models and digital twins',
+    'Vision-language-action policies',
+    'Multimodal robot navigation',
     'Reliable real-world autonomy',
   ],
   education: [
-    { school: 'UMass Amherst', degree: 'MS Computer Science' },
-    { school: 'IIT Kharagpur', degree: 'B.Tech Electrical Engineering' },
+    {
+      school: 'University of Massachusetts Amherst',
+      degree: 'MS Computer Science · GPA 3.95/4.0 · 2025–2027',
+    },
+    {
+      school: 'Indian Institute of Technology Kharagpur',
+      degree: 'B.Tech Electrical Engineering · GPA 8.22/10.0 · 2018–2022',
+    },
   ],
 };
 export function isPlaceholderLink(url: string) {

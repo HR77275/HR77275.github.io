@@ -69,7 +69,7 @@ Set resumeAvailable to true in data/profile.ts after adding the real PDF. Until 
 
 Placeholder social URLs contain YOUR_USERNAME and are rendered as clearly unavailable text. They become working links automatically when replaced. The footer notice disappears once all contact details are filled in.
 
-Set NEXT_PUBLIC_SITE_URL to your final trusted HTTPS origin before deploying. The default example.com is an intentional placeholder for sitemap, canonical URLs, and social-card URLs. Do not leave it in a public deployment.
+Vercel automatically supplies the production origin via VERCEL_PROJECT_PRODUCTION_URL. Set NEXT_PUBLIC_SITE_URL only to override it with a trusted HTTPS origin. The default example.com is an intentional placeholder for sitemap, canonical URLs, and social-card URLs. Do not leave it in a public deployment.
 
 ## Add a project
 
@@ -138,7 +138,7 @@ Add a Note object to content/notes.ts with a unique slug, title, description, ca
 1. Put this portfolio folder in its own Git repository, or set the Vercel Root Directory to portfolio if you intentionally keep it in a monorepo.
 2. Import it into Vercel using the Next.js framework preset.
 3. Use Node.js 22.x, npm ci, and npm run build. Leave Output Directory at its default.
-4. Set NEXT_PUBLIC_SITE_URL to the final deployment origin and redeploy after changing it.
+4. Keep Vercel system environment variables enabled; the production domain is detected automatically. For an explicit custom-domain override, set NEXT_PUBLIC_SITE_URL and redeploy.
 5. Add the real contact URLs and resume and verify all claims before sharing.
 
 No Cloudflare configuration is needed for Vercel. The optional build:sites script and vite.config.ts are a separate Sites-compatible build path; the default scripts remain Next.js. Hosting tools are development dependencies and are not imported by the portfolio pages.
@@ -153,7 +153,7 @@ See PHASES.md for the latest completed checks and remaining deployment steps.
 
 https://himanshu-ranjan-ml-robotics.himanshu772002.chatgpt.site
 
-This preview uses owner-only access; it is not the public Vercel deployment. The hosted SITE_URL environment value supplies its trusted origin. Set NEXT_PUBLIC_SITE_URL for your eventual Vercel domain.
+This preview uses owner-only access; it is not the public Vercel deployment. The hosted SITE_URL environment value supplies its trusted origin. The Vercel production domain is detected automatically; do not copy the private preview origin into Vercel environment variables.
 
 The optional Cloudflare local emulator does not start on this Ubuntu 20.04 installation because its workerd binary requires a newer glibc. This does not affect Next.js development, production builds, or Vercel deployment. Both build targets compile; only the optional local Worker emulation is unavailable.
 
@@ -169,3 +169,5 @@ The optional Cloudflare local emulator does not start on this Ubuntu 20.04 insta
 - No new runtime packages were installed for these features. Accessible dialogs reuse the existing Base UI dependency.
 
 Run npm run check:content for data integrity and project-search checks. Browser interaction and visual testing have not been performed in this environment.
+
+See DEPLOYMENT.md for the GitHub and Vercel account setup checkpoint.

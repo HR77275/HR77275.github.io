@@ -46,3 +46,9 @@ Do not publish invented metrics or confidential employer data.
 - Existing social card, content, personal links, and hosting project preserved.
 - Next.js and Sites production builds, TypeScript, lint, project-search checks, 17 route responses, 3 missing-route cases, and representative metadata checks passed.
 - The enhanced version uses the same private site URL; deployment confirmation is recorded in the task thread.
+
+## GitHub + Vercel preparation — 2026-08-31
+
+User selected GitHub source control and Vercel hosting. Connected GitHub identity verified as HR77275. Prepared explicit Next.js Vercel configuration, Node.js 22.x, CLI upload exclusions, automatic production-domain fallback, and the verified GitHub profile link. Existing private Sites deployment preserved.
+
+TypeScript, lint, content/search checks, and Next.js production build passed. See DEPLOYMENT.md for the resumable account steps. Repository creation, Vercel account connection, public deployment, and live verification remain pending: no repository-creation connector or authenticated CLI is available and the browser runtime fails to start. No paid service or domain has been purchased.

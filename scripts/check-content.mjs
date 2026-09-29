@@ -68,18 +68,16 @@ import { filterProjects } from '../lib/project-search.ts';
 assert.equal(filterProjects(projects, 'All work', '').length, projects.length);
 assert.deepEqual(
   filterProjects(projects, 'Robotics', '  SMOLVLA  ').map((p) => p.slug),
-  ['smolvla'],
+  ['robot-policy-evaluation'],
 );
 assert.deepEqual(
-  filterProjects(projects, 'Perception', 'BiFPN').map((p) => p.slug),
+  filterProjects(projects, 'Perception', 'PyTorch').map((p) => p.slug),
   ['adas-trifocal', 'pole-detection'],
 );
-assert.equal(filterProjects(projects, 'Robotics', 'BiFPN').length, 0);
+assert.equal(filterProjects(projects, 'Robotics', 'PyTorch').length, 0);
 assert.deepEqual(
-  filterProjects(projects, 'All work', 'synthetic controlnet').map(
-    (p) => p.slug,
-  ),
-  ['synthetic-rare-cases'],
+  filterProjects(projects, 'All work', 'unitree diffusion').map((p) => p.slug),
+  ['multimodal-go2-navigation'],
 );
 assert.equal(
   filterProjects(projects, 'All work', 'nonexistenttopic').length,
