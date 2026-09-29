@@ -108,6 +108,13 @@ export const projects: Project[] = [
     color: 'forest',
     featured: true,
     status: 'published',
+    cover: {
+      type: 'image',
+      src: '/media/go2/go2-payload-side.webp',
+      alt: 'Unitree Go2 carrying a secured liquid payload during navigation research',
+      width: 1800,
+      height: 1350,
+    },
     summary:
       'A research pipeline for multimodal robot data, learned navigation, and safety-aware deployment.',
     technologies: ['ROS 2', 'Multimodal perception', 'Robot learning'],
@@ -140,9 +147,55 @@ export const projects: Project[] = [
     ],
     demo: [
       {
-        type: 'placeholder',
-        label: 'Approved navigation media',
-        caption: 'Only lab-approved footage will be added.',
+        type: 'image',
+        src: '/media/go2/go2-payload-side.webp',
+        alt: 'Side view of a Unitree Go2 carrying a secured liquid payload',
+        caption:
+          'Go2 payload configuration used for condition-aware navigation experiments.',
+        width: 1600,
+        height: 1200,
+      },
+      {
+        type: 'image',
+        src: '/media/go2/go2-payload-front.webp',
+        alt: 'Front view of a Unitree Go2 with a secured liquid payload',
+        caption: 'Front view of the payload-carrying quadruped platform.',
+        width: 1350,
+        height: 1800,
+      },
+      {
+        type: 'image',
+        src: '/media/go2/go2-sensor-compute.webp',
+        alt: 'Top view of the Unitree Go2 sensor and onboard compute setup',
+        caption:
+          'Sensor and compute integration used for multimodal robot data collection.',
+        width: 1350,
+        height: 1800,
+      },
+      {
+        type: 'image',
+        src: '/media/go2/go2-outdoor-platform.webp',
+        alt: 'Unitree Go2 configured for an outdoor navigation run',
+        caption:
+          'Outdoor configuration prepared for a controlled navigation run.',
+        width: 1350,
+        height: 1800,
+      },
+      {
+        type: 'video',
+        src: '/media/go2/go2-safe-route.mp4',
+        poster: '/media/go2/go2-payload-side.webp',
+        alt: 'RGB and normalized depth views from a stable-route Go2 navigation run',
+        caption:
+          'Stable-route run showing synchronized RGB and normalized depth observations. The public clip was trimmed and stripped of audio and metadata.',
+      },
+      {
+        type: 'video',
+        src: '/media/go2/go2-fast-route.mp4',
+        poster: '/media/go2/go2-outdoor-platform.webp',
+        alt: 'RGB and normalized depth views from a faster Go2 navigation run',
+        caption:
+          'Faster-route run showing synchronized RGB and normalized depth observations. Audio and metadata were removed for publication.',
       },
     ],
     links: [],
