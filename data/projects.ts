@@ -61,6 +61,13 @@ export const projects: Project[] = [
     color: 'sage',
     featured: true,
     status: 'published',
+    cover: {
+      type: 'image',
+      src: '/media/manipulation/manipulation-cover.webp',
+      alt: 'Robot arm performing a cloth manipulation task in a lab workspace',
+      width: 576,
+      height: 1024,
+    },
     summary:
       'Research on learned manipulation policies, simulation-informed supervision, and real-robot evaluation.',
     technologies: ['Robot learning', 'Simulation', 'VLA policies'],
@@ -93,9 +100,36 @@ export const projects: Project[] = [
     ],
     demo: [
       {
-        type: 'placeholder',
-        label: 'Approved robot-learning media',
-        caption: 'Only publication-cleared images or videos will be added.',
+        type: 'video',
+        src: '/media/manipulation/insert-rope.mp4',
+        poster: '/media/manipulation/insert-rope-poster.webp',
+        alt: 'Robot arm inserting a rope loop onto a horizontal fixture',
+        caption:
+          'Insert-rope rollout from a controlled real-robot evaluation. Audio and metadata were removed for publication.',
+      },
+      {
+        type: 'video',
+        src: '/media/manipulation/place-flower.mp4',
+        poster: '/media/manipulation/place-flower-poster.webp',
+        alt: 'Robot arm placing an artificial flower into a vase',
+        caption:
+          'Place-flower rollout from a controlled real-robot evaluation. Audio and metadata were removed for publication.',
+      },
+      {
+        type: 'video',
+        src: '/media/manipulation/hang-cloth.mp4',
+        poster: '/media/manipulation/hang-cloth-poster.webp',
+        alt: 'Robot arm hanging a cloth on a fixture',
+        caption:
+          'Hang-cloth rollout from a controlled real-robot evaluation. Audio and metadata were removed for publication.',
+      },
+      {
+        type: 'video',
+        src: '/media/manipulation/hang-mug.mp4',
+        poster: '/media/manipulation/hang-mug-poster.webp',
+        alt: 'Robot arm hanging a blue mug on a vertical stand',
+        caption:
+          'Hang-mug rollout from a controlled real-robot evaluation. Audio and metadata were removed for publication.',
       },
     ],
     links: [],
@@ -148,15 +182,6 @@ export const projects: Project[] = [
     demo: [
       {
         type: 'image',
-        src: '/media/go2/go2-payload-side.webp',
-        alt: 'Side view of a Unitree Go2 carrying a secured liquid payload',
-        caption:
-          'Go2 payload configuration used for condition-aware navigation experiments.',
-        width: 1600,
-        height: 1200,
-      },
-      {
-        type: 'image',
         src: '/media/go2/go2-payload-front.webp',
         alt: 'Front view of a Unitree Go2 with a secured liquid payload',
         caption: 'Front view of the payload-carrying quadruped platform.',
@@ -184,7 +209,7 @@ export const projects: Project[] = [
       {
         type: 'video',
         src: '/media/go2/go2-safe-route.mp4',
-        poster: '/media/go2/go2-payload-side.webp',
+        poster: '/media/go2/go2-safe-route-poster.webp',
         alt: 'RGB and normalized depth views from a stable-route Go2 navigation run',
         caption:
           'Stable-route run showing synchronized RGB and normalized depth observations. The public clip was trimmed and stripped of audio and metadata.',
@@ -192,7 +217,7 @@ export const projects: Project[] = [
       {
         type: 'video',
         src: '/media/go2/go2-fast-route.mp4',
-        poster: '/media/go2/go2-outdoor-platform.webp',
+        poster: '/media/go2/go2-fast-route-poster.webp',
         alt: 'RGB and normalized depth views from a faster Go2 navigation run',
         caption:
           'Faster-route run showing synchronized RGB and normalized depth observations. Audio and metadata were removed for publication.',
