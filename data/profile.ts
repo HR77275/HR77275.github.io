@@ -1,10 +1,10 @@
 export const profile = {
   name: 'Himanshu Ranjan',
   role: 'Robotics & Machine Learning Engineer',
-  focus: 'Embodied AI · World Models · Autonomous Systems',
+  focus: 'Embodied AI · Robot Learning · Autonomous Systems',
   intro:
-    'I build learning systems for robots, from multimodal data pipelines and world models to vision-language-action policies and safety-aware autonomy.',
-  location: 'Amherst, MA',
+    'I build learning systems for robots, spanning multimodal perception, robot learning, simulation, and reliable real-world deployment.',
+  location: 'United States',
   email: 'himanshuranj@umass.edu',
   links: {
     github: 'https://github.com/HR77275',
@@ -12,32 +12,32 @@ export const profile = {
     huggingface: 'https://huggingface.co/YOUR_USERNAME',
     resume: '/resume.pdf',
   },
-  resumeAvailable: true,
+  resumeAvailable: false,
   siteUrl:
     process.env.SITE_URL ||
     process.env.NEXT_PUBLIC_SITE_URL ||
     (process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL
       : 'https://example.com'),
-  bio: 'My work connects robot learning with reliable real-world systems: collecting multimodal data, training manipulation and navigation policies, building simulation workflows, and deploying perception and inference pipelines.',
+  bio: 'My work connects machine learning with physical systems, from multimodal data and learned policies to the engineering required for dependable robot deployment.',
   currentFocus:
-    'World-model post-training, digital twins, multimodal navigation, and vision-language-action policies for real robots.',
+    'Robot learning, multimodal navigation, and simulation-informed autonomy for real-world systems.',
   background:
-    'I am an MS Computer Science student at UMass Amherst with research experience in embodied AI and human-centered robotics, following three years building production ADAS perception systems at Bosch.',
+    'I am pursuing an MS in Computer Science at UMass Amherst after working on production machine-learning and perception systems in industry.',
   interests: [
-    'World models and digital twins',
-    'Vision-language-action policies',
-    'Multimodal robot navigation',
+    'Robot learning',
+    'Multimodal perception',
+    'Simulation and world models',
     'Reliable real-world autonomy',
   ],
   education: [
     {
       school: 'University of Massachusetts Amherst',
-      degree: 'MS Computer Science · GPA 3.95/4.0 · 2025–2027',
+      degree: 'MS Computer Science · 2025–2027',
     },
     {
       school: 'Indian Institute of Technology Kharagpur',
-      degree: 'B.Tech Electrical Engineering · GPA 8.22/10.0 · 2018–2022',
+      degree: 'B.Tech Electrical Engineering · 2018–2022',
     },
   ],
 };

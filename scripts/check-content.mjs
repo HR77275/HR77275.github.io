@@ -67,17 +67,19 @@ console.log(
 import { filterProjects } from '../lib/project-search.ts';
 assert.equal(filterProjects(projects, 'All work', '').length, projects.length);
 assert.deepEqual(
-  filterProjects(projects, 'Robotics', '  SMOLVLA  ').map((p) => p.slug),
-  ['robot-policy-evaluation'],
+  filterProjects(projects, 'Robotics', '  VLA  ').map((p) => p.slug),
+  ['robot-learning-research'],
 );
 assert.deepEqual(
-  filterProjects(projects, 'Perception', 'PyTorch').map((p) => p.slug),
-  ['adas-trifocal', 'pole-detection'],
+  filterProjects(projects, 'Perception', 'representation retrieval').map(
+    (p) => p.slug,
+  ),
+  ['visual-scene-matching'],
 );
-assert.equal(filterProjects(projects, 'Robotics', 'PyTorch').length, 0);
+assert.equal(filterProjects(projects, 'Perception', 'ROS 2').length, 0);
 assert.deepEqual(
-  filterProjects(projects, 'All work', 'unitree diffusion').map((p) => p.slug),
-  ['multimodal-go2-navigation'],
+  filterProjects(projects, 'Robotics', 'voice public ros').map((p) => p.slug),
+  ['voice-guided-person-following'],
 );
 assert.equal(
   filterProjects(projects, 'All work', 'nonexistenttopic').length,

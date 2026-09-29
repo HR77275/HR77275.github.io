@@ -12,78 +12,75 @@ export const researchFocus: ResearchFocus[] = [
   {
     label: 'Robot learning',
     category: 'Robotics',
-    title: 'From demonstrations to behavior.',
+    title: 'From experience to behavior.',
     description:
-      'Vision-language-action models, diffusion policies, and coordinated manipulation on real robots.',
-    context: 'UMass Amherst · Embodied AI research',
-    projectSlug: 'smolvla',
+      'Learning manipulation policies and evaluating how they transfer to physical robots.',
+    context: 'Academic research · Embodied AI',
+    projectSlug: 'robot-learning-research',
     stages: [
       {
         label: 'Observe',
         detail:
-          'Camera observations, robot state, and language instructions provide context for the task.',
+          'Robot observations and task context define the behavior to learn.',
       },
       {
         label: 'Learn',
         detail:
-          'Demonstrations connect observations to actions through imitation learning and learned policies.',
+          'Training connects demonstrations and controlled supervision to robot actions.',
       },
       {
-        label: 'Act',
-        detail:
-          'Hardware rollouts reveal how a policy behaves beyond the training dataset.',
+        label: 'Evaluate',
+        detail: 'Physical evaluation reveals reliability and failure modes.',
       },
     ],
   },
   {
-    label: 'ADAS perception',
-    category: 'Perception',
-    title: 'From pixels to structure.',
+    label: 'Robot navigation',
+    category: 'Robotics',
+    title: 'From sensing to safe motion.',
     description:
-      'Multi-view detection, depth, and structured perception for autonomous driving systems.',
-    context: 'Bosch · Machine Learning & ADAS',
-    projectSlug: 'adas-trifocal',
+      'Multimodal perception, temporal context, and safety-aware policy deployment.',
+    context: 'Academic research · Mobile robotics',
+    projectSlug: 'multimodal-robot-navigation',
     stages: [
       {
         label: 'Sense',
         detail:
-          'Far, mid, and near camera views provide complementary information about a scene.',
+          'Multiple sensors provide complementary observations of the environment.',
       },
       {
-        label: 'Fuse',
+        label: 'Reason',
         detail:
-          'Multi-scale feature fusion brings information together for a shared detection pipeline.',
+          'A learned policy uses temporal context to estimate useful motion.',
       },
       {
-        label: 'Interpret',
+        label: 'Control',
         detail:
-          'Objects, structures, and geometry form useful outputs for downstream autonomy.',
+          'Monitoring and guarded transitions support physical evaluation.',
       },
     ],
   },
   {
-    label: 'Synthetic data',
-    category: 'Generative AI',
-    title: 'Exploring the long tail.',
+    label: 'Visual perception',
+    category: 'Perception',
+    title: 'From images to useful matches.',
     description:
-      'Controllable diffusion and synthetic rare-case generation for driving datasets.',
-    context: 'Autonomous driving · Generative models',
-    projectSlug: 'synthetic-rare-cases',
+      'Learned visual representations for matching, retrieval, and behavior analysis.',
+    context: 'Computer vision · Representation learning',
+    projectSlug: 'visual-scene-matching',
     stages: [
       {
-        label: 'Condition',
-        detail:
-          'Scene structure and scenario definitions guide the generation process.',
+        label: 'Represent',
+        detail: 'Visual encoders transform scenes into comparable features.',
       },
       {
-        label: 'Generate',
-        detail:
-          'Diffusion models and ControlNet create controlled variations of driving scenes.',
+        label: 'Compare',
+        detail: 'Similarity measures rank candidate scenes for retrieval.',
       },
       {
-        label: 'Evaluate',
+        label: 'Inspect',
         detail:
-          'Quality metrics and qualitative review expose limitations; downstream utility needs separate validation.',
+          'False-match analysis exposes limitations and guides iteration.',
       },
     ],
   },
