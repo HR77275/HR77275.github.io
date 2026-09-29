@@ -12,7 +12,7 @@ export const profile = {
     huggingface: 'https://huggingface.co/YOUR_USERNAME',
     resume: '/resume.pdf',
   },
-  resumeAvailable: false,
+  resumeAvailable: true,
   siteUrl:
     process.env.SITE_URL ||
     process.env.NEXT_PUBLIC_SITE_URL ||
