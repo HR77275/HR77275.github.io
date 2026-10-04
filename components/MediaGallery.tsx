@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { PreviewDialog } from '@/components/ui/dialog';
 function label(media: Media, index: number) {
   if (media.type === 'placeholder') return media.label;
+  if ('title' in media && media.title) return media.title;
   return (
     media.caption ||
     `${media.type === 'video' ? 'Video' : media.type === 'comparison' ? 'Comparison' : media.type === 'diagram' ? 'Architecture' : 'Image'} ${index + 1}`

@@ -4,6 +4,7 @@ import { ArchitectureExplorer } from './ArchitectureExplorer';
 import { ProjectNavigation } from './ProjectNavigation';
 import { MediaGallery } from './MediaGallery';
 import { MediaBlock } from './MediaBlock';
+import { ProjectMediaSections } from './ProjectMediaSections';
 import { ArrowRight, ArrowUpRight } from './Icons';
 const sections = [
   ['overview', 'Overview'],
@@ -13,7 +14,7 @@ const sections = [
   ['contribution', 'My Contribution'],
   ['experiments', 'Experiments / Training'],
   ['results', 'Results'],
-  ['demo', 'Demo'],
+  ['demo', 'Media'],
   ['technical', 'Technical Details'],
   ['links', 'Links'],
 ];
@@ -49,6 +50,16 @@ export function ProjectLayout({
             <span key={t}>{t}</span>
           ))}
         </div>
+        {project.facts?.length ? (
+          <dl className="project-facts">
+            {project.facts.map((fact) => (
+              <div key={fact.label}>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        ) : null}
       </header>
       {project.status === 'draft' && (
         <aside className="draft-notice">
@@ -61,7 +72,9 @@ export function ProjectLayout({
         </aside>
       )}
       {project.cover ? (
-        <MediaBlock media={project.cover} />
+        <div className="project-detail-cover">
+          <MediaBlock media={project.cover} />
+        </div>
       ) : (
         <ArchitectureExplorer project={project} />
       )}
@@ -86,11 +99,7 @@ export function ProjectLayout({
           </section>
           <section id="architecture">
             <h2>System / Architecture</h2>
-            <p>
-              The conceptual flow below provides a starting point for the final
-              architecture. Replace it with the verified system diagram when
-              available.
-            </p>
+            <p>{project.diagram.note}</p>
             {project.architecture ? (
               <MediaBlock media={project.architecture} />
             ) : (
@@ -129,8 +138,12 @@ export function ProjectLayout({
             <Items items={project.results} />
           </section>
           <section id="demo">
-            <h2>Demo</h2>
-            <MediaGallery key={project.slug} media={project.demo} />
+            <h2>Media and demonstrations</h2>
+            {project.mediaSections?.length ? (
+              <ProjectMediaSections sections={project.mediaSections} />
+            ) : (
+              <MediaGallery key={project.slug} media={project.demo} />
+            )}
           </section>
           {project.technicalDetails?.length ? (
             <section id="technical">
