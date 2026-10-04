@@ -2,7 +2,13 @@ import Image from 'next/image';
 import type { Media } from '@/data/projects';
 import { MediaComparison } from './MediaComparison';
 import { ProjectVideo } from './ProjectVideo';
-export function MediaBlock({ media }: { media: Media }) {
+export function MediaBlock({
+  media,
+  priority = false,
+}: {
+  media: Media;
+  priority?: boolean;
+}) {
   if (media.type === 'placeholder')
     return (
       <figure className="media-placeholder">
@@ -29,6 +35,7 @@ export function MediaBlock({ media }: { media: Media }) {
         width={media.width || 1440}
         height={media.height || 900}
         sizes="(max-width:700px) 100vw, 900px"
+        loading={priority ? 'eager' : undefined}
         unoptimized={media.type === 'gif' || media.src.endsWith('.svg')}
       />
       {media.caption && <figcaption>{media.caption}</figcaption>}

@@ -73,7 +73,7 @@ export function ProjectLayout({
       )}
       {project.cover ? (
         <div className="project-detail-cover">
-          <MediaBlock media={project.cover} />
+          <MediaBlock media={project.cover} priority />
         </div>
       ) : (
         <ArchitectureExplorer project={project} />
