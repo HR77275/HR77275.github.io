@@ -811,6 +811,27 @@ h3 {
   color: var(--accent);
   border-radius: 3px;
 }
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: -3px 0 17px;
+}
+
+.experience-meta > span {
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.25;
+  background: color-mix(in srgb, var(--background) 88%, var(--accent) 12%);
+}
+
+.experience-panel .experience-meta {
+  margin: -3px 0 18px;
+}
+
 .contribution-list {
   list-style: none;
   padding: 0;

@@ -1,9 +1,11 @@
 'use client';
+
 import { useId, useState } from 'react';
 import Link from 'next/link';
 import type { Experience } from '@/data/experience';
 import { Button } from '@/components/ui/button';
 import { ArrowUpRight } from './Icons';
+
 export function ExperienceExplorer({
   experiences,
 }: {
@@ -12,6 +14,7 @@ export function ExperienceExplorer({
   const [active, setActive] = useState(1);
   const id = useId();
   const selected = experiences[active] || experiences[0];
+
   return (
     <div className="experience-explorer">
       <fieldset className="experience-selector">
@@ -30,7 +33,7 @@ export function ExperienceExplorer({
               <strong>{experience.organization}</strong>
               <small>{experience.role}</small>
             </span>
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true">&#8599;</span>
           </Button>
         ))}
       </fieldset>
@@ -38,6 +41,11 @@ export function ExperienceExplorer({
         <div key={selected.organization}>
           <p className="eyebrow">RESEARCH + ENGINEERING</p>
           <h3>{selected.role}</h3>
+          <div className="experience-meta">
+            <span>{selected.organization}</span>
+            <span>{selected.period}</span>
+            <span>{selected.location}</span>
+          </div>
           <p className="experience-context">{selected.context}</p>
           <ul className="contribution-list">
             {selected.contributions.map((c) => (

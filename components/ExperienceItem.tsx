@@ -1,4 +1,5 @@
 import type { Experience } from '@/data/experience';
+
 export function ExperienceItem({
   experience,
   compact = false,
@@ -12,6 +13,10 @@ export function ExperienceItem({
       <div>
         <h3>{experience.organization}</h3>
         <p className="experience-role">{experience.role}</p>
+        <div className="experience-meta" aria-label="Role details">
+          <span>{experience.location}</span>
+          <span>{experience.employmentType}</span>
+        </div>
         {!compact && (
           <>
             <p className="muted body-copy">{experience.context}</p>
