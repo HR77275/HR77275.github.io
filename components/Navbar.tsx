@@ -30,7 +30,9 @@ export function Navbar() {
           onClick={() => setOpen(false)}
         >
           <span className="wordmark-name">Himanshu Ranjan</span>
-          <span className="wordmark-discipline">Robotics + ML</span>
+          <span className="wordmark-discipline">
+            Machine Learning + Robotics
+          </span>
         </Link>
         <nav aria-label="Main navigation" className="desktop-nav">
           {routes.map(([href, label]) => (
