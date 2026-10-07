@@ -3,7 +3,7 @@ export const profile = {
   role: 'Robotics & Machine Learning Engineer',
   focus: 'Embodied AI · Robot Learning · Autonomous Systems',
   intro:
-    'I build learning systems for robots, spanning multimodal perception, robot learning, simulation, and reliable real-world deployment.',
+    'I build learning systems for autonomous robots, connecting multimodal perception and simulation with reliable behavior in the physical world.',
   location: 'United States',
   email: 'himanshuranj@umass.edu',
   links: {

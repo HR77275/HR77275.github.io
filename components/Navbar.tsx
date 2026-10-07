@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -6,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowUpRight } from './Icons';
 import { profile } from '@/data/profile';
 import { ProfileLink } from './ProfileLink';
+
 const routes = [
   ['/', 'Home'],
   ['/projects', 'Projects'],
@@ -13,9 +15,11 @@ const routes = [
   ['/research', 'Research'],
   ['/about', 'About'],
 ];
+
 export function Navbar() {
   const path = usePathname();
   const [open, setOpen] = useState(false);
+
   return (
     <header className="site-header">
       <div className="nav-shell">
@@ -25,7 +29,8 @@ export function Navbar() {
           aria-label="Himanshu Ranjan home"
           onClick={() => setOpen(false)}
         >
-          hr<span>.</span>
+          <span className="wordmark-name">Himanshu Ranjan</span>
+          <span className="wordmark-discipline">Robotics + ML</span>
         </Link>
         <nav aria-label="Main navigation" className="desktop-nav">
           {routes.map(([href, label]) => (
@@ -57,7 +62,7 @@ export function Navbar() {
           onClick={() => setOpen(!open)}
         >
           {open ? 'Close' : 'Menu'}{' '}
-          <span aria-hidden="true">{open ? '−' : '+'}</span>
+          <span aria-hidden="true">{open ? '-' : '+'}</span>
         </Button>
       </div>
       {open && (

@@ -1,25 +1,22 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { profile } from '@/data/profile';
 import { ProfileLink } from './ProfileLink';
 import { ArrowRight, ArrowUpRight } from './Icons';
-import { ResearchExplorer } from './ResearchExplorer';
+
 export function Hero() {
   return (
     <section className="hero hero-interactive">
       <div className="hero-composition">
         <div className="hero-copy">
-          <p className="eyebrow">
-            <span className="status-dot" /> PERCEPTION. LEARNING. ACTION.
+          <p className="eyebrow hero-eyebrow">
+            ROBOT LEARNING <span>/</span> WORLD MODELS <span>/</span> AUTONOMY
           </p>
-          <p className="hero-name">{profile.name}</p>
+          <p className="hero-name">{profile.role}</p>
           <h1>
-            Machine Learning
+            Building intelligence
             <br />
-            &amp;{' '}
-            <span>
-              Robotics
-              <br className="hero-break" /> Engineer.
-            </span>
+            for the <span>physical world.</span>
           </h1>
           <p className="hero-intro">{profile.intro}</p>
           <div className="hero-actions">
@@ -34,16 +31,36 @@ export function Hero() {
             <ProfileLink href={profile.links.github}>GitHub</ProfileLink>
             <ProfileLink href={profile.links.linkedin}>LinkedIn</ProfileLink>
             <a href="#selected-work" className="scroll-cue">
-              Scroll to selected work <span aria-hidden="true">↓</span>
+              Scroll to selected work <span aria-hidden="true">down</span>
             </a>
           </div>
         </div>
-        <ResearchExplorer />
+        <figure className="hero-portrait">
+          <div className="hero-portrait-frame">
+            <Image
+              src="/images/himanshu-ranjan-portrait.webp"
+              alt="Himanshu Ranjan standing in front of a snow-covered mountain landscape"
+              fill
+              priority
+              sizes="(max-width: 800px) 100vw, 44vw"
+            />
+            <span className="portrait-index" aria-hidden="true">
+              01
+            </span>
+          </div>
+          <figcaption>
+            <span>
+              <strong>Himanshu Ranjan</strong>
+              <small>Robotics and Machine Learning Engineer</small>
+            </span>
+            <span>Research / Engineering</span>
+          </figcaption>
+        </figure>
       </div>
       <div className="focus-line">
-        <span>{profile.focus}</span>
+        <span>Perception / world modeling / robot learning</span>
         <span>
-          From models to real-world systems <ArrowRight />
+          From simulation to physical systems <ArrowRight />
         </span>
       </div>
     </section>

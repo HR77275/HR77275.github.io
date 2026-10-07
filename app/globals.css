@@ -3500,3 +3500,194 @@ fieldset.filter-buttons {
 .project-detail-cover .media-block figcaption {
   display: none;
 }
+
+/* Personal wordmark and portrait-led homepage hero */
+.wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: none;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.wordmark .wordmark-name {
+  color: var(--foreground);
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -0.35px;
+}
+
+.wordmark .wordmark-discipline {
+  color: var(--accent);
+  font-size: 8px;
+  font-weight: 650;
+  letter-spacing: 1.45px;
+  text-transform: uppercase;
+}
+
+.hero-composition {
+  grid-template-columns: minmax(0, 1.06fr) minmax(390px, 0.94fr);
+  gap: 70px;
+}
+
+.hero-eyebrow span {
+  margin: 0 6px;
+  opacity: 0.38;
+}
+
+.hero-interactive .hero-name {
+  margin: 13px 0 22px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.35px;
+  text-transform: uppercase;
+}
+
+.hero-interactive h1 {
+  max-width: 720px;
+  font-size: clamp(45px, 4.8vw, 69px);
+  line-height: 1.02;
+}
+
+.hero-interactive .hero-intro {
+  max-width: 590px;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.hero-portrait {
+  min-width: 0;
+  margin: 0;
+  animation: enter-up 0.85s 0.18s both;
+}
+
+.hero-portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid #cbd4c4;
+  border-radius: 15px;
+  background: #dfe5e4;
+  box-shadow: 0 24px 55px -38px #21332c99;
+}
+
+.hero-portrait-frame img {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+
+.hero-portrait:hover .hero-portrait-frame img {
+  transform: scale(1.025);
+}
+
+.portrait-index {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  min-width: 34px;
+  padding: 8px 9px;
+  border: 1px solid #ffffff70;
+  border-radius: 999px;
+  background: #16231db8;
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.hero-portrait figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 15px 2px 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.hero-portrait figcaption > span:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-portrait figcaption strong {
+  color: var(--foreground);
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.hero-portrait figcaption small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.hero-portrait figcaption > span:last-child {
+  padding-top: 2px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1100px) {
+  .hero-composition {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.82fr);
+    gap: 38px;
+  }
+
+  .hero-interactive h1 {
+    font-size: clamp(43px, 5vw, 58px);
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-composition {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    max-width: 680px;
+    margin: auto;
+  }
+
+  .hero-interactive h1 {
+    font-size: clamp(43px, 8vw, 59px);
+  }
+
+  .hero-portrait {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .wordmark .wordmark-name {
+    font-size: 14px;
+  }
+
+  .wordmark .wordmark-discipline {
+    font-size: 7px;
+    letter-spacing: 1.1px;
+  }
+
+  .hero-interactive .hero-name {
+    font-size: 9px;
+  }
+
+  .hero-eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .hero-interactive h1 {
+    font-size: clamp(38px, 11vw, 50px);
+  }
+
+  .hero-portrait figcaption > span:last-child {
+    display: none;
+  }
+}
