@@ -10,14 +10,14 @@ export function Hero() {
       <div className="hero-composition">
         <div className="hero-copy">
           <p className="eyebrow hero-eyebrow">
-            MACHINE LEARNING <span>/</span> COMPUTER VISION <span>/</span> ROBOT
+            MACHINE LEARNING <span>/</span> PERCEPTION <span>/</span> ROBOT
             LEARNING
           </p>
           <p className="hero-name">{profile.role}</p>
           <h1>
-            Learning systems that
+            Building intelligence
             <br />
-            <span>see, understand, and act.</span>
+            for the <span>physical world.</span>
           </h1>
           <p className="hero-intro">{profile.intro}</p>
           <div className="hero-actions">
@@ -59,7 +59,7 @@ export function Hero() {
         </figure>
       </div>
       <div className="focus-line">
-        <span>Computer vision / perception / robot learning</span>
+        <span>Perception / world models / robot learning</span>
         <span>
           From multimodal data to intelligent systems <ArrowRight />
         </span>

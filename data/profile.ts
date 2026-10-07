@@ -1,9 +1,9 @@
 export const profile = {
   name: 'Himanshu Ranjan',
   role: 'Machine Learning & Robotics Engineer',
-  focus: 'Machine Learning · Computer Vision · Robot Learning',
+  focus: 'Machine Learning · Perception · Robot Learning',
   intro:
-    'I develop machine learning systems for computer vision, multimodal perception, and embodied intelligence—from visual understanding to robot learning, world models, and autonomous behavior.',
+    'I develop machine learning systems for multimodal perception and embodied intelligence—from visual understanding to robot learning, world models, and autonomous behavior.',
   location: 'United States',
   email: 'himanshuranj@umass.edu',
   links: {
@@ -19,14 +19,13 @@ export const profile = {
     (process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL
       : 'https://example.com'),
-  bio: 'My work spans machine learning, computer vision, and perception, from multimodal representations and learned policies to dependable intelligent systems in the physical world.',
+  bio: 'My work spans machine learning and perception, from multimodal representations and learned policies to dependable intelligent systems in the physical world.',
   currentFocus:
-    'Machine learning for computer vision and multimodal perception, with applications in robot learning, world modeling, and real-world autonomy.',
+    'Machine learning for multimodal perception, with applications in robot learning, world modeling, and real-world autonomy.',
   background:
     'I am pursuing an MS in Computer Science at UMass Amherst after working on production machine-learning and perception systems in industry.',
   interests: [
     'Machine learning',
-    'Computer vision and perception',
     'Multimodal perception',
     'Robot learning',
     'Simulation and world models',
