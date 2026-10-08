@@ -245,13 +245,13 @@ export const projects: Project[] = [
       height: 1024,
     },
     summary:
-      'Co-authored research on photorealistic digital twins for developing and evaluating robot manipulation policies across single-arm and bimanual platforms. Currently under review at ICLR.',
+      'Co-authored research on photorealistic digital twins and vision-based critics for studying generalist robot manipulation policies across single-arm and bimanual platforms. Currently under review at ICLR.',
     technologies: [
       '3D Gaussian Splatting',
       'Genesis',
       'VLA policies',
       'Diffusion policies',
-      'Vision-based evaluation',
+      'Vision-based critic',
     ],
     facts: [
       {
@@ -267,21 +267,22 @@ export const projects: Project[] = [
       inputs: [
         'Robot demonstrations',
         'Digital-twin observations',
-        'Task context',
+        'Robot state and task context',
       ],
-      model: 'VLA and diffusion-based policies',
-      output: 'Single-arm and bimanual behaviors',
-      note: 'A real-to-simulation workflow supports policy development and evaluation before testing on physical robots.',
+      model: 'Generalist policy + vision-based critic',
+      output: 'Action proposals + learned value estimates',
+      note: 'The digital twin provides visual observations and privileged supervision for learning a critic that can assess policy behavior from vision.',
     },
     overview:
-      'This co-authored research studies how photorealistic digital twins of real workspaces can support robot-policy development and evaluation before transfer to physical systems. The project combines 3D Gaussian Splatting scene reconstruction, Genesis simulation, robot demonstrations, vision-based evaluation, and physical rollouts on xArm7 and bimanual RM65B platforms.',
+      'This co-authored research studies how photorealistic digital twins of real workspaces can support robot-policy development, critique, and evaluation before transfer to physical systems. The project combines 3D Gaussian Splatting scene reconstruction, Genesis simulation, robot demonstrations, a twin-grounded vision critic, and physical rollouts on xArm7 and bimanual RM65B platforms.',
     problem:
-      'Physical robot data and evaluation time are limited, while conventional simulation may differ substantially from the real workspace. The project explores whether visually grounded digital twins can provide a practical environment for studying manipulation policies before physical evaluation.',
+      'Physical robot data and evaluation time are limited, while conventional simulation may look substantially different from the real workspace. The project explores whether a visually grounded digital twin can supervise a critic that understands task progress from images and can provide useful feedback for manipulation policies.',
     approach: [
-      'Reconstruct manipulation workspaces with 3D Gaussian Splatting and connect them to Genesis-based task environments.',
-      'Organize robot demonstrations and task environments for both xArm7 and bimanual RM65B systems.',
-      'Study generalist and diffusion-based policy families, including SmolVLA, π0, π0.5, and a multi-task Diffusion Transformer.',
-      'Compare policy behavior in simulation and on physical robots while keeping unpublished evaluation details private.',
+      'Reconstruct real manipulation workspaces with 3D Gaussian Splatting and bind their visual representation to Genesis-based task environments.',
+      'Use simulation state and task rewards as privileged supervision, then distill that signal into a vision-based critic that operates on rendered RGB observations, robot state, and task context.',
+      'Study how the critic can score task progress and provide feedback around successful behavior, failures, and recovery trajectories without requiring privileged state at deployment time.',
+      'Apply the framework to generalist and diffusion-based policy families, including SmolVLA, π0, π0.5, and a multi-task Diffusion Transformer.',
+      'Explore critic-guided policy selection, conditioning, and post-training before qualitative evaluation through physical rollouts on xArm7 and bimanual RM65B systems.',
     ],
     contribution: [
       'Contributed to the digital-twin, task-simulation, and research-data workflows.',
@@ -291,13 +292,14 @@ export const projects: Project[] = [
     experiments: [
       'Single-arm and bimanual tasks span rigid-object placement, insertion, stacking, sorting, and deformable-object manipulation.',
       'The policy study covers VLA, flow-matching, and diffusion-based approaches.',
-      'Public videos show representative task demonstrations and physical policy rollouts.',
-      'Detailed experimental settings and comparisons remain private while the research is under review.',
+      'Critic development uses visually rendered trajectories with examples of task progress, failure, and recovery.',
+      'Public videos show representative task demonstrations and physical policy rollouts; they are qualitative examples rather than evidence of a final result.',
+      'Experimental outcomes, quantitative comparisons, and paper conclusions remain private while the research is under review.',
     ],
     results: [
-      'Established an end-to-end research workflow spanning scene reconstruction, task simulation, policy evaluation, and physical robot rollouts.',
-      'Demonstrated learned manipulation behaviors across single-arm and bimanual platforms.',
-      'Quantitative results and paper-specific conclusions are intentionally withheld until the associated research is public.',
+      'The current implementation spans scene reconstruction, task simulation, critic learning, policy study, and physical robot rollouts.',
+      'The public media documents the task suite and representative policy behavior on single-arm and bimanual platforms.',
+      'The work is ongoing; no conclusive performance claim, quantitative result, or paper-specific conclusion is presented here.',
     ],
     demo: [...robotTaskSuiteMedia, ...robotRolloutMedia],
     mediaSections: [
@@ -316,9 +318,11 @@ export const projects: Project[] = [
     ],
     technicalDetails: [
       'The digital-twin workflow combines 3D Gaussian Splatting scene representations with Genesis-based simulation.',
-      'The study covers learned visuomotor policies and representative rigid and deformable manipulation tasks.',
+      'A privileged simulation signal supervises a vision-based critic that reasons from visual observations, robot state, and task context.',
+      'The critic is being studied as a source of feedback for policy assessment, action selection, conditioning, and post-training.',
+      'The policy study covers learned visuomotor policies and representative rigid and deformable manipulation tasks.',
       'Both single-arm xArm7 and bimanual RM65B systems are used for physical evaluation.',
-      'Public media has no audio or embedded metadata. Private datasets, detailed reward definitions, and unpublished measurements are excluded.',
+      'Public media has no audio or embedded metadata. Private datasets, implementation-specific configurations, detailed reward definitions, unpublished measurements, and conclusions are excluded.',
     ],
     links: [],
   },
