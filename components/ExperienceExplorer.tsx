@@ -49,11 +49,6 @@ export function ExperienceExplorer({
             <span>{selected.location}</span>
           </div>
           <p className="experience-context">{selected.context}</p>
-          <ul className="contribution-list">
-            {selected.contributions.map((c) => (
-              <li key={c}>{c}</li>
-            ))}
-          </ul>
           <div className="tags">
             {selected.tags.map((t) => (
               <span key={t}>{t}</span>

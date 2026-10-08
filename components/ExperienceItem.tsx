@@ -20,11 +20,6 @@ export function ExperienceItem({
         {!compact && (
           <>
             <p className="muted body-copy">{experience.context}</p>
-            <ul className="contribution-list">
-              {experience.contributions.map((c) => (
-                <li key={c}>{c}</li>
-              ))}
-            </ul>
           </>
         )}
         <div className="tags">

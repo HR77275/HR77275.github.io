@@ -12,7 +12,6 @@ const routes = [
   ['/', 'Home'],
   ['/projects', 'Research Projects'],
   ['/experience', 'Experience'],
-  ['/research', 'Research'],
   ['/about', 'About'],
 ];
 

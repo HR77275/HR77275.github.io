@@ -18,7 +18,7 @@ export const experiences: Experience[] = [
     location: 'Houston, TX, USA',
     employmentType: 'Internship',
     context:
-      'Contributing to simulation and world-modeling workflows for robotic autonomy, with work spanning environment understanding, behavior evaluation, and repeatable experimentation.',
+      'I work with the Autonomy and World Modeling team on simulation and world-modeling workflows for robotic autonomy. My responsibilities include setting up and evaluating NVIDIA Isaac Sim and NVIDIA Cosmos workflows, reproducing simulation benchmarks, and supporting experiments involving environment understanding, robot behavior, perception, prediction, and task reasoning.',
     contributions: [
       'Set up and evaluated NVIDIA Isaac Sim and NVIDIA Cosmos workflows for simulation-based autonomy research.',
       'Reproduced simulation benchmarks and supported experiments involving robot behavior, scene understanding, and environment modeling.',
@@ -34,7 +34,7 @@ export const experiences: Experience[] = [
     location: 'Amherst, MA, USA',
     employmentType: 'Research',
     context:
-      'Developing simulation-informed robot-learning methods that connect photorealistic digital twins, learned policies, and physical manipulation.',
+      'I develop simulation-informed robot-learning methods that connect photorealistic digital twins, learned policies, and physical manipulation. The work includes building 3D Gaussian Splatting environments in Genesis, evaluating vision-language-action and diffusion-based policies on real robot platforms, and studying supervision and reward signals for offline improvement and sim-to-real transfer.',
     contributions: [
       'Built 3D Gaussian Splatting digital-twin workflows in Genesis to generate controlled supervision for vision-based policy evaluation.',
       'Trained and evaluated VLA and diffusion-based manipulation policies on single-arm and bimanual robot platforms across diverse real-world tasks.',
@@ -50,7 +50,7 @@ export const experiences: Experience[] = [
     location: 'Amherst, MA, USA',
     employmentType: 'Research',
     context:
-      'Researching multimodal perception and condition-aware navigation for quadruped robots in real-world environments.',
+      'I research multimodal perception and condition-aware navigation for quadruped robots in real-world environments. My work combines synchronized RGB-D, GPS, IMU, and teleoperation data with learned navigation policies, and includes integrating policy inference into a distributed ROS 2 system with monitoring and guarded controller handoff.',
     contributions: [
       'Built a ROS 2 data pipeline for the Unitree Go2 that time-aligns RGB-D, GPS, IMU, and teleoperation signals for dataset generation and offline evaluation.',
       'Developed learned navigation policies that combine temporal sensor context with condition-aware guidance for safer or faster route selection.',
@@ -66,7 +66,7 @@ export const experiences: Experience[] = [
     location: 'Bangalore, KA, India',
     employmentType: 'Full-time',
     context:
-      'Developed machine-learning systems for ADAS perception and 3D scene understanding across autonomous and driver-assistance applications.',
+      'I worked on machine-learning systems for ADAS perception and 3D scene understanding across autonomous and driver-assistance applications. My work covered depth estimation, traffic-element detection, and 3D reconstruction, together with improvements to training pipelines, data loading, and GPU utilization. I also built Azure-based analysis and visualization workflows using Voxel FiftyOne and contributed to multimodal AI systems for technical-document parsing, retrieval, comparison, and validation.',
     contributions: [
       'Developed models for depth estimation, traffic-element detection, and 3D reconstruction across near-, mid-, and far-field ranges.',
       'Improved training and data pipelines to increase GPU utilization, shorten experimentation cycles, and use compute more efficiently.',
@@ -82,7 +82,7 @@ export const experiences: Experience[] = [
     location: 'Bangalore, KA, India',
     employmentType: 'Internship',
     context:
-      'Developed a learning-based scene-matching system for identifying and comparing applications across devices under changing backgrounds and lighting.',
+      'I worked on a learning-based scene-matching system for identifying and comparing applications across devices under varying backgrounds and lighting. I developed a matching pipeline using Mask R-CNN for instance segmentation and Siamese networks for learned visual similarity, while also contributing to data collection, model evaluation, error analysis, and improvements in matching consistency.',
     contributions: [
       'Built a matching pipeline using Mask R-CNN for instance segmentation and Siamese networks for learned visual similarity.',
       'Collected and curated training data, conducted model-evaluation experiments, and analyzed retrieval errors.',
