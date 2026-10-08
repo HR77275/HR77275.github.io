@@ -409,40 +409,67 @@ export const projects: Project[] = [
     featured: true,
     status: 'published',
     summary:
-      'A public ROS 2 project connecting voice commands, person-following perception, and autonomous robot behaviors.',
-    technologies: ['ROS 2', 'RoboMaster EP', 'Person tracking'],
+      'A public, co-authored ROS 2 system that connects voice intent, person tracking, metric depth estimation, and closed-loop control on a DJI RoboMaster EP.',
+    technologies: [
+      'ROS 2',
+      'RoboMaster EP',
+      'Person tracking',
+      'Whisper',
+      'DeepSORT',
+      'Depth Anything V2',
+      'PID control',
+    ],
+    facts: [
+      { label: 'Authorship', value: 'Co-authored project' },
+      { label: 'Platform', value: 'DJI RoboMaster EP' },
+      {
+        label: 'Perception',
+        value: 'Person detection, tracking, depth, and optional identity',
+      },
+      {
+        label: 'Behaviors',
+        value: 'Follow, approach, stop, authorized follow, pickup, and drop',
+      },
+    ],
     diagram: {
-      inputs: ['Voice command', 'Camera + depth'],
-      model: 'Intent + tracking + state machine',
-      output: 'Robot behavior',
-      note: 'Spoken intent to autonomous execution',
+      inputs: ['Voice or text command', 'Camera detections', 'Depth and ToF'],
+      model: 'Intent FSM + DeepSORT + depth-guided PID',
+      output: 'Chassis and arm/gripper commands',
+      note: 'Structured voice intent gates perception-driven following and interaction behaviors through ROS 2.',
     },
     overview:
-      'A co-authored public robotics project combining voice intent, target following, navigation, and manipulation.',
+      'This co-authored course project integrates spoken and text commands with a ROS 2 perception and control stack for the DJI RoboMaster EP. The system can follow the nearest tracked person, approach at a shorter distance, stop on command, optionally restrict following to a recognized person, and run fixed pickup or drop sequences through the robot arm and gripper.',
     problem:
-      'Natural-language commands must become structured robot actions while perception maintains a reliable target estimate.',
+      'Person following requires more than detecting someone in a camera frame. The robot must preserve a target across frames, estimate distance, translate commands into safe operating states, and stop when perception becomes stale or the behavior controller disables motion.',
     approach: [
-      'Convert voice commands into structured robot intents.',
-      'Track a target using visual and depth information.',
-      'Coordinate navigation and manipulation with a finite-state controller.',
+      'Transcribe microphone input with Whisper or accept text input, then map phrases to follow, authorized-follow, approach, stop, pickup, and drop intents.',
+      'Associate RoboMaster person detections across frames with DeepSORT and estimate metric depth with Depth Anything V2, with optional front-ToF correction.',
+      'Select the nearest valid track, or an authorized identity when identity filtering is enabled, and regulate distance and image-center error with a PID controller.',
+      'Gate chassis motion and arm/gripper sequences through a finite-state machine with stale-data stops, speed limits, and controller deadbands.',
     ],
     contribution: [
-      'Developed parts of the ROS 2 autonomy stack.',
-      'Contributed to the target-following perception pipeline.',
-      'Implemented and evaluated state-machine-controlled robot behavior.',
+      'Co-developed the ROS 2 integration across voice intent, perception, following control, and robot behaviors.',
+      'Contributed to the tracked-person and depth pipeline used by the controller.',
+      'Integrated state-gated following, approach, stop, pickup, and drop behaviors on the RoboMaster EP.',
     ],
     experiments: [
-      'Tested voice-driven navigation and person-following behavior.',
-      'Evaluated following behavior using recorded robot data.',
+      'Tested voice and text commands through a local web interface and ROS 2 intent topics.',
+      'Ran integrated demonstrations with the live tracking overlay, depth estimate, finite-state transitions, chassis following, and arm/gripper actions.',
+      'Added a repeatable follow-distance evaluation protocol based on hold rate, distance error, bias, and command jitter.',
     ],
     results: [
-      'Integrated speech, perception, navigation, and manipulation in a working robot demonstration.',
+      'Integrated command input, person tracking, depth estimation, state management, and robot control in a working physical demonstration.',
+      'The public repository includes the ROS 2 packages, launch configuration, setup instructions, safety gates, and follow-distance evaluation tooling.',
     ],
     demo: [
       {
-        type: 'placeholder',
-        label: 'Public RoboMaster demonstration',
-        caption: 'Add a project video supplied or approved by the team.',
+        type: 'video',
+        title: 'Integrated system demonstration',
+        src: '/media/robomaster/voice-guided-person-following.mp4',
+        poster: '/media/robomaster/voice-guided-person-following-poster.webp',
+        alt: 'Voice-guided person-following demonstration with the RoboMaster EP, tracking overlay, and ROS 2 system logs',
+        caption:
+          'End-to-end demonstration of command input, tracked-person perception, behavior-state transitions, and physical robot operation. The supplied clip is trimmed by four seconds and played at 1.5× speed.',
       },
     ],
     links: [
