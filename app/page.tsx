@@ -7,36 +7,50 @@ import { SkillsSection } from '@/components/SkillsSection';
 import { Reveal } from '@/components/MotionSurface';
 import { ArrowUpRight } from '@/components/Icons';
 import { projects } from '@/data/projects';
-import { experiences } from '@/data/experience';
+import { workExperiences } from '@/data/experience';
+
 export default function Home() {
   return (
     <div className="container">
       <Hero />
       <Reveal>
-        <section className="section" id="selected-work">
+        <section
+          className="section home-experience"
+          id="selected-work"
+          aria-labelledby="work-experience-heading"
+        >
           <SectionHeading
-            eyebrow="01 / SELECTED WORK"
+            eyebrow="01 / WORK EXPERIENCE"
             title="Intelligence, put to work."
-            description="Choose a field. Look inside a project. Follow the engineering."
+            description="Professional experience applying machine learning across autonomy, perception, and intelligent systems."
+            href="/experience"
+            linkLabel="Full experience"
+            titleId="work-experience-heading"
+          />
+          <ExperienceExplorer
+            experiences={workExperiences}
+            eyebrow="PROFESSIONAL EXPERIENCE"
+          />
+        </section>
+      </Reveal>
+      <Reveal>
+        <section
+          className="section"
+          id="research-projects"
+          aria-labelledby="research-projects-heading"
+        >
+          <SectionHeading
+            eyebrow="02 / RESEARCH PROJECTS"
+            title="Questions explored through systems."
+            description="Selected research projects in robot learning, multimodal perception, simulation, and autonomy."
             href="/projects"
-            linkLabel="All projects"
+            linkLabel="All research projects"
+            titleId="research-projects-heading"
           />
           <ProjectFilter
             projects={projects.filter((project) => project.featured)}
             compact
           />
-        </section>
-      </Reveal>
-      <Reveal>
-        <section className="section home-experience">
-          <SectionHeading
-            eyebrow="02 / EXPERIENCE"
-            title="Research meets deployment."
-            description="Explore the work across teams and disciplines."
-            href="/experience"
-            linkLabel="View experience"
-          />
-          <ExperienceExplorer experiences={experiences} />
         </section>
       </Reveal>
       <Reveal>

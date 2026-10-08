@@ -10,7 +10,7 @@ import { ProfileLink } from './ProfileLink';
 
 const routes = [
   ['/', 'Home'],
-  ['/projects', 'Projects'],
+  ['/projects', 'Research Projects'],
   ['/experience', 'Experience'],
   ['/research', 'Research'],
   ['/about', 'About'],

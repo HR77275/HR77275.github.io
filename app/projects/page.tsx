@@ -2,23 +2,30 @@ import type { Metadata } from 'next';
 import { PageIntro } from '@/components/PageIntro';
 import { ProjectFilter } from '@/components/ProjectFilter';
 import { projects } from '@/data/projects';
+
 export const metadata: Metadata = {
-  title: 'Projects',
+  title: 'Research Projects',
   description:
-    'Project outlines in robot learning, ADAS perception, and synthetic data generation.',
+    'Research project case studies in robot learning, multimodal perception, simulation, and autonomous systems.',
 };
+
 export default function Projects() {
   return (
     <div className="container">
       <PageIntro
-        eyebrow={`PROJECT INDEX / ${String(projects.length).padStart(2, '0')} STUDIES`}
-        title="From perception to action."
-        description="Selected work across embodied AI, computer vision, and autonomous systems. Each case study connects the problem, the approach, and the engineering behind it."
+        eyebrow={
+          'RESEARCH PROJECTS / ' +
+          String(projects.length).padStart(2, '0') +
+          ' STUDIES'
+        }
+        title="Research through working systems."
+        description="Selected projects in robot learning, multimodal perception, simulation, and autonomy. Each case study presents the question, approach, implementation, and evidence available for public discussion."
       />
       <ProjectFilter projects={projects} />
       <p className="index-note">
-        Project outlines are editable drafts. Metrics, media, and contribution
-        details will be added as they are verified.
+        Project descriptions include only verified and publishable information.
+        Private data, proprietary implementation details, and results under
+        review are intentionally excluded.
       </p>
     </div>
   );

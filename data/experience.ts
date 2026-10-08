@@ -18,11 +18,11 @@ export const experiences: Experience[] = [
     location: 'Houston, TX, USA',
     employmentType: 'Internship',
     context:
-      'Working with the Autonomy and World Modeling team on simulation and world-modeling workflows for robotic autonomy.',
+      'Contributing to simulation and world-modeling workflows for robotic autonomy, with work spanning environment understanding, behavior evaluation, and repeatable experimentation.',
     contributions: [
-      'Setting up and evaluating NVIDIA Isaac Sim and Cosmos-based workflows for autonomy research.',
-      'Reproducing simulation benchmarks and supporting experiments in robot behavior and environment understanding.',
-      'Contributing to workflows that connect perception, prediction, task reasoning, and robot-skill evaluation.',
+      'Set up and evaluated NVIDIA Isaac Sim and NVIDIA Cosmos workflows for simulation-based autonomy research.',
+      'Reproduced simulation benchmarks and supported experiments involving robot behavior, scene understanding, and environment modeling.',
+      'Supported evaluation workflows connecting perception, prediction, task reasoning, and robot-skill behavior.',
     ],
     tags: ['World models', 'Isaac Sim', 'NVIDIA Cosmos', 'Robot autonomy'],
     status: 'Current',
@@ -66,12 +66,12 @@ export const experiences: Experience[] = [
     location: 'Bangalore, KA, India',
     employmentType: 'Full-time',
     context:
-      'Worked on ADAS perception with a focus on computer vision, deep learning, and 3D scene understanding for autonomous and driver-assistance systems.',
+      'Developed machine-learning systems for ADAS perception and 3D scene understanding across autonomous and driver-assistance applications.',
     contributions: [
-      'Developed models for depth estimation, traffic-element detection, and 3D reconstruction across near-, mid-, and far-field perception.',
-      'Optimized training pipelines, data loaders, and GPU utilization to accelerate experimentation and reduce compute cost.',
-      'Built Azure-based detection, storage, inspection, and visualization workflows using Voxel FiftyOne for model analysis.',
-      'Designed agentic multimodal AI workflows using LLMs and VLMs to automate technical-document parsing, retrieval, and comparison.',
+      'Developed models for depth estimation, traffic-element detection, and 3D reconstruction across near-, mid-, and far-field ranges.',
+      'Improved training and data pipelines to increase GPU utilization, shorten experimentation cycles, and use compute more efficiently.',
+      'Built end-to-end detection, storage, inspection, and visualization workflows on Azure, including large-scale model analysis with Voxel FiftyOne.',
+      'Designed multimodal AI workflows using LLMs and VLMs to support technical-document parsing, retrieval, comparison, and validation.',
     ],
     tags: ['ADAS', 'Computer vision', '3D perception', 'Multimodal AI'],
   },
@@ -82,12 +82,20 @@ export const experiences: Experience[] = [
     location: 'Bangalore, KA, India',
     employmentType: 'Internship',
     context:
-      'Developed an AI-based scene-matching system for identifying and comparing applications across devices under changing backgrounds and lighting.',
+      'Developed a learning-based scene-matching system for identifying and comparing applications across devices under changing backgrounds and lighting.',
     contributions: [
-      'Built a visual-matching pipeline using Mask R-CNN for instance segmentation and Siamese networks for feature-similarity learning.',
-      'Collected and curated training data, ran model-evaluation experiments, and analyzed false matches.',
-      'Improved the workflow for more consistent retrieval under visual and illumination changes.',
+      'Built a matching pipeline using Mask R-CNN for instance segmentation and Siamese networks for learned visual similarity.',
+      'Collected and curated training data, conducted model-evaluation experiments, and analyzed retrieval errors.',
+      'Improved the workflow for more consistent matching under background, appearance, and illumination changes.',
     ],
     tags: ['Mask R-CNN', 'Siamese networks', 'Scene matching'],
   },
 ];
+
+export const workExperiences = experiences.filter(
+  (experience) => experience.employmentType !== 'Research',
+);
+
+export const researchExperiences = experiences.filter(
+  (experience) => experience.employmentType === 'Research',
+);

@@ -8,8 +8,10 @@ import { ArrowUpRight } from './Icons';
 
 export function ExperienceExplorer({
   experiences,
+  eyebrow = 'EXPERIENCE',
 }: {
   experiences: Experience[];
+  eyebrow?: string;
 }) {
   const [active, setActive] = useState(1);
   const id = useId();
@@ -39,7 +41,7 @@ export function ExperienceExplorer({
       </fieldset>
       <div id={id} className="experience-panel" aria-live="polite">
         <div key={selected.organization}>
-          <p className="eyebrow">RESEARCH + ENGINEERING</p>
+          <p className="eyebrow">{eyebrow}</p>
           <h3>{selected.role}</h3>
           <div className="experience-meta">
             <span>{selected.organization}</span>
