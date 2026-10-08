@@ -165,6 +165,15 @@ const robotRolloutMedia: Media[] = [
     alt: 'Robot arm hanging a blue mug on a vertical stand',
     caption: 'Hang-mug policy rollout from a controlled real-robot evaluation.',
   },
+  {
+    type: 'video',
+    title: 'Bimanual Object Placement Rollout',
+    src: '/media/manipulation/bimanual-object-placement.mp4',
+    poster: '/media/manipulation/bimanual-object-placement-poster.webp',
+    alt: 'Bimanual RM65B robot placing objects into a bowl during a policy rollout',
+    caption:
+      'Bimanual object-placement policy rollout on the physical RM65B platform.',
+  },
 ];
 
 const go2SetupMedia: Media[] = [
@@ -250,7 +259,7 @@ export const projects: Project[] = [
         value: 'Data collection, policy training, and physical evaluation',
       },
       { label: 'Platforms', value: 'xArm7 and bimanual RM65B' },
-      { label: 'Media', value: '12 manipulation demonstrations' },
+      { label: 'Media', value: '13 manipulation demonstrations' },
       { label: 'Authorship', value: 'Co-authored research' },
       { label: 'Status', value: 'Currently under review at ICLR' },
     ],
@@ -283,7 +292,7 @@ export const projects: Project[] = [
     experiments: [
       'Eight-task manipulation suite spanning rope, knot, mug, block, flower, insertion, towel, and sorting behaviors.',
       'Single-arm and bimanual evaluation to expose different coordination and control challenges.',
-      'Four longer policy rollouts for insert-rope, place-flower, hang-cloth, and hang-mug tasks.',
+      'Five longer policy rollouts for insert-rope, place-flower, hang-cloth, hang-mug, and bimanual object-placement tasks.',
       'Comparisons of sparse task rewards, learned reward models, and digital-twin-derived evaluation signals remain part of ongoing research.',
     ],
     results: [
@@ -302,7 +311,7 @@ export const projects: Project[] = [
       {
         title: 'Real-robot policy rollouts',
         description:
-          'Four longer rollouts show complete manipulation attempts used during controlled physical evaluation.',
+          'Five longer rollouts show complete manipulation attempts used during controlled physical evaluation.',
         media: robotRolloutMedia,
       },
     ],
