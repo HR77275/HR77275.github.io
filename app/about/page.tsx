@@ -1,65 +1,47 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageIntro } from '@/components/PageIntro';
-import { SkillsSection } from '@/components/SkillsSection';
 import { profile } from '@/data/profile';
 import { ArrowUpRight } from '@/components/Icons';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Himanshu Ranjan: machine learning and robotics, from ADAS perception to embodied AI research.',
+    'The academic background of Himanshu Ranjan, a graduate student in Computer Science at UMass Amherst.',
 };
 export default function About() {
   return (
     <div className="container">
       <PageIntro
         eyebrow="ABOUT"
-        title="Models are only part of the system."
-        description={profile.bio}
+        title="Academic background."
+        description="My academic path combines graduate study in computer science with an undergraduate foundation in electrical engineering."
       />
-      <div className="about-layout">
-        <aside className="about-card">
-          <div className="monogram" aria-hidden="true">
-            hr<span>.</span>
-          </div>
-          <h2>{profile.name}</h2>
-          <p>{profile.role}</p>
-          <span className="small muted">{profile.location}</span>
-          <Link href="/resume" className="text-link">
-            View resume <ArrowUpRight />
-          </Link>
-        </aside>
-        <div className="about-sections">
-          <section>
-            <p className="eyebrow">01 / CURRENT FOCUS</p>
-            <h2>Learning in the physical world.</h2>
-            <p>{profile.currentFocus}</p>
-          </section>
-          <section>
-            <p className="eyebrow">02 / BACKGROUND</p>
-            <h2>From perception to autonomy.</h2>
-            <p>{profile.background}</p>
-          </section>
-          <section>
-            <p className="eyebrow">03 / RESEARCH INTERESTS</p>
-            <div className="interest-tags">
-              {profile.interests.map((i) => (
-                <span key={i}>{i}</span>
-              ))}
+      <section className="academic-history" aria-label="Education">
+        {profile.education.map((education, index) => (
+          <article className="academic-entry" key={education.school}>
+            <div className="academic-index">0{index + 1}</div>
+            <div className="academic-main">
+              <p className="eyebrow">{education.period}</p>
+              <h2>{education.school}</h2>
+              <p className="academic-degree">{education.degree}</p>
+              <p className="academic-study">{education.study}</p>
             </div>
-          </section>
-          <section>
-            <p className="eyebrow">04 / EDUCATION</p>
-            {profile.education.map((e) => (
-              <div className="education-item" key={e.school}>
-                <h3>{e.school}</h3>
-                <p>{e.degree}</p>
-              </div>
-            ))}
-          </section>
-        </div>
+            <div className="academic-gpa">
+              <span>GPA</span>
+              <strong>{education.gpa}</strong>
+            </div>
+          </article>
+        ))}
+      </section>
+      <div className="about-resume-link">
+        <p>
+          Coursework, experience, and selected projects are detailed in my
+          resume.
+        </p>
+        <Link href="/resume" className="button secondary-button">
+          View resume <ArrowUpRight />
+        </Link>
       </div>
-      <SkillsSection />
     </div>
   );
 }

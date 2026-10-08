@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import type { Experience } from '@/data/experience';
 
 export function ExperienceItem({
@@ -10,27 +11,36 @@ export function ExperienceItem({
   return (
     <article className="experience-item">
       <div className="experience-period">{experience.period}</div>
-      <div>
+      <div className="experience-copy">
         <h3>{experience.organization}</h3>
         <p className="experience-role">{experience.role}</p>
         <div className="experience-meta" aria-label="Role details">
           <span>{experience.location}</span>
           <span>{experience.employmentType}</span>
         </div>
-        {!compact && (
-          <>
-            <p className="muted body-copy">{experience.context}</p>
-          </>
-        )}
+        {!compact && <p className="muted body-copy">{experience.context}</p>}
         <div className="tags">
           {experience.tags.map((t) => (
             <span key={t}>{t}</span>
           ))}
         </div>
       </div>
-      {experience.status && (
-        <span className="experience-status">{experience.status}</span>
-      )}
+      <div className="experience-visual-column">
+        {experience.status && (
+          <span className="experience-status">{experience.status}</span>
+        )}
+        {!compact && experience.image && (
+          <div className="experience-image">
+            <Image
+              src={experience.image.src}
+              alt={experience.image.alt}
+              fill
+              sizes="(max-width: 700px) 100vw, (max-width: 1050px) 70vw, 260px"
+              style={{ objectPosition: experience.image.position }}
+            />
+          </div>
+        )}
+      </div>
     </article>
   );
 }

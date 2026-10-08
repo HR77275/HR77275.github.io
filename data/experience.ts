@@ -8,6 +8,11 @@ export type Experience = {
   contributions: string[];
   tags: string[];
   status?: string;
+  image?: {
+    src: string;
+    alt: string;
+    position?: string;
+  };
 };
 
 export const experiences: Experience[] = [
@@ -26,6 +31,11 @@ export const experiences: Experience[] = [
     ],
     tags: ['World models', 'Isaac Sim', 'NVIDIA Cosmos', 'Robot autonomy'],
     status: 'Current',
+    image: {
+      src: '/images/experience/persona.webp',
+      alt: 'Persona AI robotic hand development environment',
+      position: 'center',
+    },
   },
   {
     organization: 'Embodied AGI Lab, UMass Amherst',
@@ -74,6 +84,11 @@ export const experiences: Experience[] = [
       'Designed multimodal AI workflows using LLMs and VLMs to support technical-document parsing, retrieval, comparison, and validation.',
     ],
     tags: ['ADAS', 'Computer vision', '3D perception', 'Multimodal AI'],
+    image: {
+      src: '/images/experience/bosch.webp',
+      alt: 'Bosch Global Software Technologies brand graphic',
+      position: 'center',
+    },
   },
   {
     organization: 'LG Soft India',
@@ -89,6 +104,11 @@ export const experiences: Experience[] = [
       'Improved the workflow for more consistent matching under background, appearance, and illumination changes.',
     ],
     tags: ['Mask R-CNN', 'Siamese networks', 'Scene matching'],
+    image: {
+      src: '/images/experience/lg-soft-india.jpg',
+      alt: 'LG Soft India innovation showcase',
+      position: 'center',
+    },
   },
 ];
 

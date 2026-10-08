@@ -9,7 +9,7 @@ export const profile = {
   links: {
     github: 'https://github.com/HR77275',
     linkedin: 'https://www.linkedin.com/in/himanshuranjan77/',
-    huggingface: 'https://huggingface.co/YOUR_USERNAME',
+    huggingface: 'https://huggingface.co/Himanshu77275',
     resume: '/resume.pdf',
   },
   resumeAvailable: true,
@@ -33,11 +33,19 @@ export const profile = {
   education: [
     {
       school: 'University of Massachusetts Amherst',
-      degree: 'MS Computer Science · 2025–2027',
+      degree: 'Master of Science in Computer Science',
+      period: 'Aug 2025 - May 2027',
+      gpa: '3.95 / 4.00',
+      study:
+        'Machine Learning, Reinforcement Learning, Computer Vision, Robotics, Natural Language Processing, AI Alignment, and Optimization Theory',
     },
     {
       school: 'Indian Institute of Technology Kharagpur',
-      degree: 'B.Tech Electrical Engineering · 2018–2022',
+      degree: 'Bachelor of Technology in Electrical Engineering',
+      period: 'Aug 2018 - May 2022',
+      gpa: '8.22 / 10.00',
+      study:
+        'An engineering foundation in mathematics, signals, systems, computation, and intelligent technologies',
     },
   ],
 };
