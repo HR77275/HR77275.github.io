@@ -842,6 +842,22 @@ h3 {
     transform 0.55s ease,
     filter 0.55s ease;
 }
+.experience-logo {
+  aspect-ratio: 1.62;
+  background: #fff;
+}
+.experience-logo img {
+  object-fit: contain;
+  padding: 24px;
+  filter: none;
+}
+.experience-logo-dark {
+  background: #142a31;
+}
+.experience-item:hover .experience-logo img {
+  transform: none;
+  filter: none;
+}
 .experience-item:hover .experience-image img {
   transform: scale(1.035);
   filter: saturate(1) contrast(1);
@@ -1346,6 +1362,30 @@ h3 {
   font-size: clamp(28px, 3vw, 43px);
   letter-spacing: -1.4px;
 }
+.academic-school {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 12px 0 16px;
+}
+.academic-school h2 {
+  margin: 0;
+}
+.academic-logo {
+  position: relative;
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+}
+.academic-logo img {
+  object-fit: contain;
+  padding: 8px;
+}
 .academic-degree {
   margin: 0 0 17px;
   font-size: 16px;
@@ -1755,6 +1795,15 @@ h3 {
   .academic-main h2 {
     font-size: 28px;
     letter-spacing: -0.8px;
+  }
+  .academic-school {
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .academic-logo {
+    flex-basis: 54px;
+    width: 54px;
+    height: 54px;
   }
   .academic-gpa {
     grid-column: 2;

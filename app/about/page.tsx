@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { PageIntro } from '@/components/PageIntro';
 import { profile } from '@/data/profile';
@@ -22,7 +23,17 @@ export default function About() {
             <div className="academic-index">0{index + 1}</div>
             <div className="academic-main">
               <p className="eyebrow">{education.period}</p>
-              <h2>{education.school}</h2>
+              <div className="academic-school">
+                <div className="academic-logo">
+                  <Image
+                    src={education.logo}
+                    alt={education.logoAlt}
+                    fill
+                    sizes="72px"
+                  />
+                </div>
+                <h2>{education.school}</h2>
+              </div>
               <p className="academic-degree">{education.degree}</p>
               <p className="academic-study">{education.study}</p>
             </div>

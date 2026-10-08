@@ -71,10 +71,8 @@ assert.deepEqual(
   ['robot-learning-research'],
 );
 assert.deepEqual(
-  filterProjects(projects, 'Perception', 'representation retrieval').map(
-    (p) => p.slug,
-  ),
-  ['visual-scene-matching'],
+  filterProjects(projects, 'Robotics', 'multimodal ROS').map((p) => p.slug),
+  ['multimodal-robot-navigation'],
 );
 assert.equal(filterProjects(projects, 'Perception', 'ROS 2').length, 0);
 assert.deepEqual(

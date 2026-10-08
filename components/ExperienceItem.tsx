@@ -30,13 +30,14 @@ export function ExperienceItem({
           <span className="experience-status">{experience.status}</span>
         )}
         {!compact && experience.image && (
-          <div className="experience-image">
+          <div
+            className={`experience-image experience-logo experience-logo-${experience.image.theme ?? 'light'}`}
+          >
             <Image
               src={experience.image.src}
               alt={experience.image.alt}
               fill
               sizes="(max-width: 700px) 100vw, (max-width: 1050px) 70vw, 260px"
-              style={{ objectPosition: experience.image.position }}
             />
           </div>
         )}

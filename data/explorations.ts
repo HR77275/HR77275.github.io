@@ -60,28 +60,4 @@ export const researchFocus: ResearchFocus[] = [
       },
     ],
   },
-  {
-    label: 'Visual perception',
-    category: 'Perception',
-    title: 'From images to useful matches.',
-    description:
-      'Learned visual representations for matching, retrieval, and behavior analysis.',
-    context: 'Computer vision · Representation learning',
-    projectSlug: 'visual-scene-matching',
-    stages: [
-      {
-        label: 'Represent',
-        detail: 'Visual encoders transform scenes into comparable features.',
-      },
-      {
-        label: 'Compare',
-        detail: 'Similarity measures rank candidate scenes for retrieval.',
-      },
-      {
-        label: 'Inspect',
-        detail:
-          'False-match analysis exposes limitations and guides iteration.',
-      },
-    ],
-  },
 ];

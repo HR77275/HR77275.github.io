@@ -36,6 +36,8 @@ export const profile = {
       degree: 'Master of Science in Computer Science',
       period: 'Aug 2025 - May 2027',
       gpa: '3.95 / 4.00',
+      logo: '/images/logos/umass-amherst.png',
+      logoAlt: 'UMass Amherst collegiate M',
       study:
         'Machine Learning, Reinforcement Learning, Computer Vision, Robotics, Natural Language Processing, AI Alignment, and Optimization Theory',
     },
@@ -44,6 +46,8 @@ export const profile = {
       degree: 'Bachelor of Technology in Electrical Engineering',
       period: 'Aug 2018 - May 2022',
       gpa: '8.22 / 10.00',
+      logo: '/images/logos/iit-kharagpur.png',
+      logoAlt: 'Indian Institute of Technology Kharagpur emblem',
       study:
         'An engineering foundation in mathematics, signals, systems, computation, and intelligent technologies',
     },

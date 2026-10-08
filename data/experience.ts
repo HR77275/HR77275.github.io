@@ -11,7 +11,7 @@ export type Experience = {
   image?: {
     src: string;
     alt: string;
-    position?: string;
+    theme?: 'light' | 'dark';
   };
 };
 
@@ -32,9 +32,9 @@ export const experiences: Experience[] = [
     tags: ['World models', 'Isaac Sim', 'NVIDIA Cosmos', 'Robot autonomy'],
     status: 'Current',
     image: {
-      src: '/images/experience/persona.webp',
-      alt: 'Persona AI robotic hand development environment',
-      position: 'center',
+      src: '/images/logos/persona.webp',
+      alt: 'Persona AI logo',
+      theme: 'dark',
     },
   },
   {
@@ -85,9 +85,9 @@ export const experiences: Experience[] = [
     ],
     tags: ['ADAS', 'Computer vision', '3D perception', 'Multimodal AI'],
     image: {
-      src: '/images/experience/bosch.webp',
-      alt: 'Bosch Global Software Technologies brand graphic',
-      position: 'center',
+      src: '/images/logos/bosch-bgsw.png',
+      alt: 'Bosch Global Software Technologies logo',
+      theme: 'light',
     },
   },
   {
@@ -105,9 +105,9 @@ export const experiences: Experience[] = [
     ],
     tags: ['Mask R-CNN', 'Siamese networks', 'Scene matching'],
     image: {
-      src: '/images/experience/lg-soft-india.jpg',
-      alt: 'LG Soft India innovation showcase',
-      position: 'center',
+      src: '/images/logos/lg-soft-india.png',
+      alt: 'LG Soft India logo',
+      theme: 'light',
     },
   },
 ];
