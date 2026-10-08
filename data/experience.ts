@@ -32,8 +32,8 @@ export const experiences: Experience[] = [
     tags: ['World models', 'Isaac Sim', 'NVIDIA Cosmos', 'Robot autonomy'],
     status: 'Current',
     image: {
-      src: '/images/logos/persona.webp',
-      alt: 'Persona AI logo',
+      src: '/images/logos/persona-icon.png',
+      alt: 'Persona AI symbol',
       theme: 'dark',
     },
   },

@@ -852,7 +852,7 @@ h3 {
   filter: none;
 }
 .experience-logo-dark {
-  background: #142a31;
+  background: #000;
 }
 .experience-item:hover .experience-logo img {
   transform: none;

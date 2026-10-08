@@ -35,7 +35,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <span className="eyebrow">
             {project.category}
             <span className="meta-divider">/</span>
-            {project.status === 'draft' ? 'PROJECT OUTLINE' : 'CASE STUDY'}
+            {project.status === 'draft' ? 'WORK IN PROGRESS' : 'CASE STUDY'}
           </span>
           <span className="project-number">{project.number}</span>
         </div>
@@ -66,9 +66,7 @@ export function ProjectCard({ project }: { project: Project }) {
             <div className="quick-view-content">
               <p className="eyebrow">
                 {project.category} /{' '}
-                {project.status === 'draft'
-                  ? 'EDITABLE PROJECT OUTLINE'
-                  : 'CASE STUDY'}
+                {project.status === 'draft' ? 'WORK IN PROGRESS' : 'CASE STUDY'}
               </p>
               <p>{project.overview}</p>
               <h3>The approach</h3>

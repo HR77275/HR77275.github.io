@@ -198,24 +198,24 @@ const go2SetupMedia: Media[] = [
   },
 ];
 
-const go2RunMedia: Media[] = [
+const go2CollectedDataMedia: Media[] = [
   {
     type: 'video',
-    title: 'Stable-route run',
+    title: 'Payload-condition data',
     src: '/media/go2/go2-safe-route.mp4',
     poster: '/media/go2/go2-safe-route-poster.webp',
-    alt: 'RGB and normalized depth views from a stable-route Go2 navigation run',
+    alt: 'RGB and normalized depth observations collected with the Go2 carrying a payload',
     caption:
-      'Stable-route run with synchronized RGB and normalized depth observations.',
+      'A sample of synchronized RGB and normalized depth observations recorded during field data collection with the payload attached.',
   },
   {
     type: 'video',
-    title: 'Faster-route run',
+    title: 'No-payload condition data',
     src: '/media/go2/go2-fast-route.mp4',
     poster: '/media/go2/go2-fast-route-poster.webp',
-    alt: 'RGB and normalized depth views from a faster Go2 navigation run',
+    alt: 'RGB and normalized depth observations collected with the Go2 without a payload',
     caption:
-      'Faster-route run with synchronized RGB and normalized depth observations.',
+      'A sample of synchronized RGB and normalized depth observations recorded during field data collection without the payload.',
   },
 ];
 
@@ -227,7 +227,7 @@ export const projects: Project[] = [
     number: '01',
     color: 'sage',
     featured: true,
-    status: 'published',
+    status: 'draft',
     cover: {
       type: 'image',
       src: '/media/manipulation/manipulation-cover.webp',
@@ -321,7 +321,7 @@ export const projects: Project[] = [
     number: '02',
     color: 'forest',
     featured: true,
-    status: 'published',
+    status: 'draft',
     cover: {
       type: 'image',
       src: '/media/go2/go2-payload-side.webp',
@@ -330,7 +330,7 @@ export const projects: Project[] = [
       height: 1350,
     },
     summary:
-      'Co-authored research on condition-aware navigation using synchronized multimodal data, learned motion prediction, and guarded ROS 2 deployment.',
+      'Ongoing co-authored research on condition-aware navigation using synchronized multimodal data, learned motion prediction, and a ROS 2 deployment stack.',
     technologies: [
       'ROS 2',
       'Unitree Go2',
@@ -342,8 +342,8 @@ export const projects: Project[] = [
       { label: 'Authorship', value: 'Co-authored research' },
       { label: 'Platform', value: 'Unitree Go2 quadruped' },
       { label: 'Signals', value: 'RGB-D, GPS, IMU, and commands' },
-      { label: 'Behavior', value: 'Stable or faster route guidance' },
-      { label: 'Deployment', value: 'Distributed ROS 2 inference' },
+      { label: 'Conditions', value: 'Payload and no-payload data' },
+      { label: 'Status', value: 'Work in progress' },
     ],
     diagram: {
       inputs: ['RGB-D', 'GPS and IMU', 'Robot state and commands'],
@@ -352,7 +352,7 @@ export const projects: Project[] = [
       note: 'Time-aligned observations feed a condition-aware policy, then freshness checks and a guarded handoff protect physical execution.',
     },
     overview:
-      'This co-authored research explores adaptive route selection for a Unitree Go2 quadruped. When the robot carries a liquid payload, the policy favors smoother terrain and stable motion. Without the payload, guidance can favor faster routes and shortcuts across more challenging surfaces.',
+      'This ongoing co-authored research explores adaptive route selection for a Unitree Go2 quadruped. The project studies whether a learned policy can account for the robot condition, including the presence of a liquid payload, when predicting navigation commands.',
     problem:
       'Real-world navigation depends on asynchronous sensors, changing terrain, and the physical condition of the robot. A learned policy must combine these signals over time while the deployment stack detects stale data and prevents unsafe controller transitions.',
     approach: [
@@ -363,22 +363,21 @@ export const projects: Project[] = [
     ],
     contribution: [
       'Built the multimodal data pipeline and tools for dataset generation and offline evaluation.',
-      'Developed and evaluated temporal navigation models with condition-aware guidance.',
+      'Developed temporal navigation models with condition-aware guidance.',
       'Integrated asynchronous perception and policy inference into the physical Go2 software stack.',
-      'Prepared and ran controlled outdoor evaluations with and without a secured liquid payload.',
+      'Prepared and ran outdoor data-collection sessions with and without a secured liquid payload.',
     ],
     experiments: [
-      'Stable-route trials prioritize smoother ground when the robot carries the payload.',
-      'Faster-route trials allow more direct motion when payload constraints are absent.',
+      'Collect synchronized field data under payload and no-payload conditions.',
+      'Use the two conditions to study stable and more direct navigation objectives.',
       'Offline playback checks temporal alignment and command prediction before physical deployment.',
-      'Field runs inspect route choice, command smoothness, sensor freshness, and controller behavior.',
+      'Planned evaluation will examine route choice, command smoothness, sensor freshness, and controller behavior.',
     ],
     results: [
-      'Established a complete workflow from synchronized multimodal recording to physical policy execution.',
-      'Demonstrated condition-aware route behavior in controlled Go2 navigation runs.',
-      'Detailed model comparisons and unpublished measurements remain private while the research continues.',
+      'Data collection, model development, and evaluation are still in progress.',
+      'No model results or comparative conclusions are reported at this stage.',
     ],
-    demo: [...go2SetupMedia, ...go2RunMedia],
+    demo: [...go2SetupMedia, ...go2CollectedDataMedia],
     mediaSections: [
       {
         title: 'Robot and sensing setup',
@@ -387,10 +386,10 @@ export const projects: Project[] = [
         media: go2SetupMedia,
       },
       {
-        title: 'Condition-aware navigation runs',
+        title: 'Collected navigation data',
         description:
-          'Two field clips show synchronized RGB and normalized depth views for stable-route and faster-route behavior.',
-        media: go2RunMedia,
+          'These field clips show synchronized RGB and normalized depth observations collected under payload and no-payload conditions. They are dataset examples, not model results.',
+        media: go2CollectedDataMedia,
       },
     ],
     technicalDetails: [

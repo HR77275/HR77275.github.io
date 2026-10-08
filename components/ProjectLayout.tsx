@@ -63,10 +63,10 @@ export function ProjectLayout({
       {project.status === 'draft' && (
         <aside className="draft-notice">
           <span className="status-dot" />
-          <strong>Project outline</strong>
+          <strong>Work in progress</strong>
           <span>
-            Technical details and results are being documented. Diagrams are
-            illustrative.
+            Data collection, model development, and evaluation are ongoing.
+            Results will be added when they are ready for public discussion.
           </span>
         </aside>
       )}
@@ -79,9 +79,15 @@ export function ProjectLayout({
       )}
       <div className="project-content">
         <ProjectNavigation
-          sections={sections.filter(
-            ([id]) => id !== 'technical' || project.technicalDetails?.length,
-          )}
+          sections={sections
+            .filter(
+              ([id]) => id !== 'technical' || project.technicalDetails?.length,
+            )
+            .map(([id, label]) =>
+              id === 'results' && project.status === 'draft'
+                ? [id, 'Current status']
+                : [id, label],
+            )}
         />
         <article className="project-article">
           <section id="overview">
@@ -123,7 +129,7 @@ export function ProjectLayout({
             <Items items={project.experiments} />
           </section>
           <section id="results">
-            <h2>Results</h2>
+            <h2>{project.status === 'draft' ? 'Current status' : 'Results'}</h2>
             {project.metric && (
               <div className="result-metric">
                 <strong>{project.metric.value}</strong>
