@@ -236,7 +236,7 @@ export const projects: Project[] = [
       height: 1024,
     },
     summary:
-      'Digital-twin supervision, generalist manipulation policies, and physical evaluation across single-arm and bimanual robots.',
+      'Co-authored research on digital-twin supervision, generalist manipulation policies, and physical evaluation across single-arm and bimanual robots. Currently under review at ICLR.',
     technologies: [
       '3D Gaussian Splatting',
       'Genesis',
@@ -251,7 +251,8 @@ export const projects: Project[] = [
       },
       { label: 'Platforms', value: 'xArm7 and bimanual RM65B' },
       { label: 'Media', value: '12 manipulation demonstrations' },
-      { label: 'Status', value: 'Research under review' },
+      { label: 'Authorship', value: 'Co-authored research' },
+      { label: 'Status', value: 'Currently under review at ICLR' },
     ],
     diagram: {
       inputs: [
@@ -264,7 +265,7 @@ export const projects: Project[] = [
       note: 'Demonstrations and digital-twin supervision support policy training, offline analysis, and evaluation on physical robots.',
     },
     overview:
-      'This research investigates how photorealistic digital twins and privileged simulator signals can support the post-training and evaluation of generalist robot policies. The workflow connects teleoperated demonstrations, a 3D Gaussian Splatting reconstruction, the Genesis simulator, learned critics, and physical manipulation on xArm7 and bimanual RM65B systems.',
+      'This co-authored research investigates how photorealistic digital twins and privileged simulator signals can support the post-training and evaluation of generalist robot policies. The workflow connects teleoperated demonstrations, a 3D Gaussian Splatting reconstruction, the Genesis simulator, learned critics, and physical manipulation on xArm7 and bimanual RM65B systems.',
     problem:
       'Generalist policies can imitate demonstrations, but limited physical data makes it difficult to evaluate failures, compare reward signals, and improve behavior safely. A digital twin provides controlled state and task information while preserving a visual setting close to the physical workspace.',
     approach: [
@@ -329,7 +330,7 @@ export const projects: Project[] = [
       height: 1350,
     },
     summary:
-      'A condition-aware navigation system that combines synchronized multimodal data, learned motion prediction, and guarded ROS 2 deployment.',
+      'Co-authored research on condition-aware navigation using synchronized multimodal data, learned motion prediction, and guarded ROS 2 deployment.',
     technologies: [
       'ROS 2',
       'Unitree Go2',
@@ -338,6 +339,7 @@ export const projects: Project[] = [
       'Diffusion and flow matching',
     ],
     facts: [
+      { label: 'Authorship', value: 'Co-authored research' },
       { label: 'Platform', value: 'Unitree Go2 quadruped' },
       { label: 'Signals', value: 'RGB-D, GPS, IMU, and commands' },
       { label: 'Behavior', value: 'Stable or faster route guidance' },
@@ -350,7 +352,7 @@ export const projects: Project[] = [
       note: 'Time-aligned observations feed a condition-aware policy, then freshness checks and a guarded handoff protect physical execution.',
     },
     overview:
-      'This research explores adaptive route selection for a Unitree Go2 quadruped. When the robot carries a liquid payload, the policy favors smoother terrain and stable motion. Without the payload, guidance can favor faster routes and shortcuts across more challenging surfaces.',
+      'This co-authored research explores adaptive route selection for a Unitree Go2 quadruped. When the robot carries a liquid payload, the policy favors smoother terrain and stable motion. Without the payload, guidance can favor faster routes and shortcuts across more challenging surfaces.',
     problem:
       'Real-world navigation depends on asynchronous sensors, changing terrain, and the physical condition of the robot. A learned policy must combine these signals over time while the deployment stack detects stale data and prevents unsafe controller transitions.',
     approach: [

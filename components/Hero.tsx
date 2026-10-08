@@ -24,6 +24,9 @@ export function Hero() {
             <Link href="/projects" className="button-primary">
               Explore projects <ArrowRight />
             </Link>
+            <Link href="/experience" className="button-outline">
+              Experience <ArrowRight />
+            </Link>
             <Link href="/resume" className="button-outline">
               Resume <ArrowUpRight />
             </Link>
