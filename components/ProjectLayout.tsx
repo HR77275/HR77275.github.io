@@ -11,7 +11,6 @@ const sections = [
   ['problem', 'Problem'],
   ['approach', 'Approach'],
   ['architecture', 'System / Architecture'],
-  ['contribution', 'My Contribution'],
   ['experiments', 'Experiments / Training'],
   ['results', 'Results'],
   ['demo', 'Media'],
@@ -66,8 +65,8 @@ export function ProjectLayout({
           <span className="status-dot" />
           <strong>Project outline</strong>
           <span>
-            Technical details, personal contributions, and results are being
-            documented. Diagrams are illustrative.
+            Technical details and results are being documented. Diagrams are
+            illustrative.
           </span>
         </aside>
       )}
@@ -118,10 +117,6 @@ export function ProjectLayout({
                 </li>
               </ol>
             )}
-          </section>
-          <section id="contribution">
-            <h2>My Contribution</h2>
-            <Items items={project.contribution} />
           </section>
           <section id="experiments">
             <h2>Experiments / Training</h2>

@@ -58,12 +58,6 @@ export function Hero() {
           </figcaption>
         </figure>
       </div>
-      <div className="focus-line">
-        <span>Perception / world models / robot learning</span>
-        <span>
-          From multimodal data to intelligent systems <ArrowRight />
-        </span>
-      </div>
     </section>
   );
 }

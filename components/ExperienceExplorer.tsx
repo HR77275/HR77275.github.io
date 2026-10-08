@@ -13,7 +13,7 @@ export function ExperienceExplorer({
   experiences: Experience[];
   eyebrow?: string;
 }) {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
   const id = useId();
   const selected = experiences[active] || experiences[0];
 
