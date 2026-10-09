@@ -18,7 +18,7 @@ export const profile = {
     process.env.NEXT_PUBLIC_SITE_URL ||
     (process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL
-      : 'https://example.com'),
+      : 'https://hr77275.github.io'),
   bio: 'My work spans machine learning and perception, from multimodal representations and learned policies to dependable intelligent systems in the physical world.',
   currentFocus:
     'Machine learning for multimodal perception, with applications in robot learning, world modeling, and real-world autonomy.',
